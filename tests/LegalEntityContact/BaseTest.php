@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Tests;
+namespace Railken\LaraOre\Tests\LegalEntityContact;
 
 use Illuminate\Support\Facades\File;
 use Railken\Bag;
@@ -23,7 +23,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     {
         $bag = new bag();
         $bag->set('name', str_random(40));
-        $bag->set('notes', str_random(40));
         return $bag;
     }
 
@@ -32,7 +31,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
      */
     public function setUp()
     {
-        $dotenv = new \Dotenv\Dotenv(__DIR__.'/..', '.env');
+        $dotenv = new \Dotenv\Dotenv(__DIR__.'/../..', '.env');
         $dotenv->load();
 
         parent::setUp();

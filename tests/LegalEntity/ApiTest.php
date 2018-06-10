@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Tests;
+namespace Railken\LaraOre\Tests\LegalEntity;
 
 use Railken\LaraOre\Support\Testing\ApiTestableTrait;
 

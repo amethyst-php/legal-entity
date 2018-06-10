@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Tests;
+namespace Railken\LaraOre\Tests\LegalEntityContact;
 
-use Railken\LaraOre\LegalEntity\LegalEntityManager;
+use Railken\LaraOre\LegalEntityContact\LegalEntityContactManager;
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
 
 class ManagerTest extends BaseTest
@@ -16,7 +16,7 @@ class ManagerTest extends BaseTest
      */
     public function getManager()
     {
-        return new LegalEntityManager();
+        return new LegalEntityContactManager();
     }
 
     public function testSuccessCommon()
