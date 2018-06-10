@@ -19,7 +19,7 @@ class LegalEntitiesController extends RestController
         'name',
         'notes',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     protected static $fillable = [
