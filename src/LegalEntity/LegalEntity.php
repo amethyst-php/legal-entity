@@ -17,6 +17,7 @@ class LegalEntity extends Model implements EntityContract
      */
     protected $fillable = [
         'name',
+        'notes',
     ];
 
     /**

@@ -16,6 +16,7 @@ class CreateLegalEntitiesTable extends Migration
         Schema::create('ore_legal_entities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->text('notes')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
