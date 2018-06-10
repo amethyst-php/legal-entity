@@ -1,29 +1,29 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\VatNumber\Exceptions;
+namespace Railken\LaraOre\LegalEntity\Attributes\CodeTIN\Exceptions;
 
 use Railken\LaraOre\LegalEntity\Exceptions\LegalEntityAttributeException;
 
-class LegalEntityVatNumberNotValidException extends LegalEntityAttributeException
+class LegalEntityCodeTINNotUniqueException extends LegalEntityAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
-    protected $attribute = 'vat_number';
+    protected $attribute = 'code_tin';
 
     /**
      * The code to identify the error.
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_VAT_NUMBER_NOT_VALID';
+    protected $code = 'LEGALENTITY_CODETIN_NOT_UNIQUE';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = 'The %s is not valid';
+    protected $message = 'The %s is not unique';
 }

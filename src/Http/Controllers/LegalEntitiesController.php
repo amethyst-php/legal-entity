@@ -5,6 +5,7 @@ namespace Railken\LaraOre\Http\Controllers;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
 use Railken\LaraOre\LegalEntity\LegalEntityManager;
+use Illuminate\Support\Facades\Config;
 
 class LegalEntitiesController extends RestController
 {
@@ -18,7 +19,6 @@ class LegalEntitiesController extends RestController
         'id',
         'name',
         'country_iso',
-        'vat_number',
         'notes',
         'created_at',
         'updated_at',
@@ -27,7 +27,6 @@ class LegalEntitiesController extends RestController
     protected static $fillable = [
         'name',
         'country_iso',
-        'vat_number',
         'notes',
     ];
 
@@ -36,6 +35,8 @@ class LegalEntitiesController extends RestController
      */
     public function __construct(LegalEntityManager $manager)
     {
+        self::$query = array_merge(self::$query, array_keys(Config::get('ore.legal-entity.attributes')));
+        self::$fillable = array_merge(self::$fillable, array_keys(Config::get('ore.legal-entity.attributes')));
         $this->manager = $manager;
         $this->manager->setAgent($this->getUser());
         parent::__construct();

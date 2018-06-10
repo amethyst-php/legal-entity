@@ -5,6 +5,7 @@ namespace Railken\LaraOre\LegalEntity;
 use Railken\Laravel\Manager\Contracts\AgentContract;
 use Railken\Laravel\Manager\ModelManager;
 use Railken\Laravel\Manager\Tokens;
+use Illuminate\Support\Facades\Config;
 
 class LegalEntityManager extends ModelManager
 {
@@ -28,7 +29,6 @@ class LegalEntityManager extends ModelManager
         Attributes\DeletedAt\DeletedAtAttribute::class,
         Attributes\Notes\NotesAttribute::class,
         Attributes\CountryIso\CountryIsoAttribute::class,
-        Attributes\VatNumber\VatNumberAttribute::class,
     ];
 
     /**
@@ -47,6 +47,8 @@ class LegalEntityManager extends ModelManager
      */
     public function __construct(AgentContract $agent = null)
     {
+        $this->attributes = array_merge($this->attributes, array_values(Config::get('ore.legal-entity.attributes')));
+
         $this->setRepository(new LegalEntityRepository($this));
         $this->setSerializer(new LegalEntitySerializer($this));
         $this->setValidator(new LegalEntityValidator($this));

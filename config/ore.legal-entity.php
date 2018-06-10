@@ -12,6 +12,11 @@ return [
     */
     'table' => 'ore_legal_entities',
 
+    'attributes' => [
+        'code_tin' => \Railken\LaraOre\LegalEntity\Attributes\CodeTIN\CodeTINAttribute::class,
+        'code_vat' => \Railken\LaraOre\LegalEntity\Attributes\CodeVAT\CodeVATAttribute::class,
+    ],
+
     'router' => [
         'prefix'      => 'admin/legal-entities',
         'middlewares' => [

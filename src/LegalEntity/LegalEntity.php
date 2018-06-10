@@ -5,6 +5,7 @@ namespace Railken\LaraOre\LegalEntity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Railken\Laravel\Manager\Contracts\EntityContract;
+use Illuminate\Support\Facades\Config;
 
 class LegalEntity extends Model implements EntityContract
 {
@@ -20,6 +21,8 @@ class LegalEntity extends Model implements EntityContract
         'notes',
         'country_iso',
         'vat_number',
+        'code_tin',
+        'code_vat',
     ];
 
     /**
@@ -36,7 +39,8 @@ class LegalEntity extends Model implements EntityContract
      */
     public function __construct(array $attributes = [])
     {
+        $this->fillable = array_merge($this->fillable, array_keys(Config::get('ore.legal-entity.attributes')));
+        $this->table = Config::get('ore.legal-entity.table');
         parent::__construct($attributes);
-        $this->table = \Illuminate\Support\Facades\Config::get('ore.legal-entity.table');
     }
 }
