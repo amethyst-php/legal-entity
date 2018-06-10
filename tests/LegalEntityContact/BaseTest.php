@@ -2,11 +2,10 @@
 
 namespace Railken\LaraOre\Tests\LegalEntityContact;
 
-use Illuminate\Support\Facades\File;
+use Railken\Bag;
 use Railken\LaraOre\LegalEntity\LegalEntityManager;
 use Railken\LaraOre\LegalEntityContact\LegalEntityContactManager;
 use Railken\LaraOre\Taxonomy\TaxonomyManager;
-use Railken\Bag;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
@@ -22,12 +21,11 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $bag = new Bag();
         $bag->set('name', str_random(40));
         $bag->set('notes', str_random(40));
-        
+
         $lem = new LegalEntityManager();
 
         return $lem->create($bag)->getResource();
     }
-
 
     public function newTaxonomy()
     {
@@ -36,7 +34,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $bag = new Bag();
         $bag->set('name', 'Ban');
         $bag->set('vocabulary_id', $lecm->getTaxonomyVocabulary()->id);
-        
+
         $le = new TaxonomyManager();
 
         return $le->create($bag)->getResource();
@@ -55,11 +53,12 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $bag->set('taxonomy_id', $this->newTaxonomy()->id);
         //$bag->set('taxonomy_name', "email");
         $bag->set('legal_entity_id', $this->newLegalEntity()->id);
+
         return $bag;
     }
 
     /**
-     * Get parameters with taxonomy name
+     * Get parameters with taxonomy name.
      *
      * @return Bag
      */
@@ -77,7 +76,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
-        
+
         $this->artisan('migrate:fresh');
         $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\LegalEntityServiceProvider', '--force' => true]);
         $this->artisan('lara-ore:user:install');

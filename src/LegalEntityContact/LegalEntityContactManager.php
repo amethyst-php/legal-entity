@@ -2,11 +2,11 @@
 
 namespace Railken\LaraOre\LegalEntityContact;
 
+use Illuminate\Support\Facades\Config;
+use Railken\LaraOre\Vocabulary\VocabularyManager;
 use Railken\Laravel\Manager\Contracts\AgentContract;
 use Railken\Laravel\Manager\ModelManager;
 use Railken\Laravel\Manager\Tokens;
-use Railken\LaraOre\Vocabulary\VocabularyManager;
-use Illuminate\Support\Facades\Config;
 
 class LegalEntityContactManager extends ModelManager
 {
@@ -16,7 +16,7 @@ class LegalEntityContactManager extends ModelManager
      * @var string
      */
     public $entity = LegalEntityContact::class;
-    
+
     /**
      * List of all attributes.
      *
@@ -30,7 +30,7 @@ class LegalEntityContactManager extends ModelManager
         Attributes\Notes\NotesAttribute::class,
         Attributes\TaxonomyId\TaxonomyIdAttribute::class,
         Attributes\LegalEntityId\LegalEntityIdAttribute::class,
-        Attributes\Value\ValueAttribute::class
+        Attributes\Value\ValueAttribute::class,
     ];
 
     /**
@@ -58,7 +58,7 @@ class LegalEntityContactManager extends ModelManager
     }
 
     /**
-     * Retrieve the vocabulary used for the taxonomy attribute
+     * Retrieve the vocabulary used for the taxonomy attribute.
      *
      * @return \Railken\LaraOre\Vocabulary\Vocabulary
      */
@@ -73,7 +73,7 @@ class LegalEntityContactManager extends ModelManager
             $result = $vm->create(['name' => $vocabulary_name]);
 
             if (!$result->ok()) {
-                throw new \Exception(sprintf("Something did wrong while retrieving vocabulary %s, errors: %s", $vocabulary_name, json_encode($result->getSimpleErrors())));
+                throw new \Exception(sprintf('Something did wrong while retrieving vocabulary %s, errors: %s', $vocabulary_name, json_encode($result->getSimpleErrors())));
             }
 
             $resource = $result->getResource();

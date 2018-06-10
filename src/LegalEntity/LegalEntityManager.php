@@ -14,7 +14,7 @@ class LegalEntityManager extends ModelManager
      * @var string
      */
     public $entity = LegalEntity::class;
-    
+
     /**
      * List of all attributes.
      *

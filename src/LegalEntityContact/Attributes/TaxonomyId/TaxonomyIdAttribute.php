@@ -2,12 +2,11 @@
 
 namespace Railken\LaraOre\LegalEntityContact\Attributes\TaxonomyId;
 
+use Illuminate\Support\Collection;
 use Railken\Laravel\Manager\Attributes\BelongsToAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
-use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 use Railken\Laravel\Manager\Contracts\ParameterBagContract;
-use Illuminate\Support\Collection;
+use Railken\Laravel\Manager\Tokens;
 
 class TaxonomyIdAttribute extends BelongsToAttribute
 {
@@ -52,7 +51,7 @@ class TaxonomyIdAttribute extends BelongsToAttribute
         Tokens::PERMISSION_FILL => 'legal_entity_contact.attributes.taxonomy_id.fill',
         Tokens::PERMISSION_SHOW => 'legal_entity_contact.attributes.taxonomy_id.show',
     ];
-    
+
     /**
      * Retrieve the name of the relation.
      *
@@ -113,12 +112,12 @@ class TaxonomyIdAttribute extends BelongsToAttribute
         // "taxonomy_value" may be sent.
         $errors = new Collection();
 
-        if ($parameters->exists('taxonomy_name') && !$parameters->exists("taxonomy_id") && !$parameters->exists("taxonomy")) {
+        if ($parameters->exists('taxonomy_name') && !$parameters->exists('taxonomy_id') && !$parameters->exists('taxonomy')) {
             $m = $this->getRelationManager($entity);
 
             $criteria = [
                 'vocabulary_id' => $this->getManager()->getTaxonomyVocabulary()->id,
-                'name' => $parameters->get('taxonomy_name')
+                'name'          => $parameters->get('taxonomy_name'),
             ];
 
             $resource = $m->getRepository()->findOneBy($criteria);

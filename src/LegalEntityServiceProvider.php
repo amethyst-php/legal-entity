@@ -2,15 +2,12 @@
 
 namespace Railken\LaraOre;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 use Railken\LaraOre\Api\Support\Router;
 
 class LegalEntityServiceProvider extends ServiceProvider
 {
-
     /**
      * Bootstrap any application services.
      *
@@ -44,12 +41,12 @@ class LegalEntityServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/ore.legal-entity.php', 'ore.legal-entity');
         $this->mergeConfigFrom(__DIR__.'/../config/ore.legal-entity-contact.php', 'ore.legal-entity-contact');
     }
-    
+
     /**
-    * Load routes.
-    *
-    * @return void
-    */
+     * Load routes.
+     *
+     * @return void
+     */
     public function loadRoutes()
     {
         Router::group(array_merge(Config::get('ore.legal-entity.router'), [

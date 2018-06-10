@@ -2,7 +2,6 @@
 
 namespace Railken\LaraOre\Tests\LegalEntity;
 
-use Illuminate\Support\Facades\File;
 use Railken\Bag;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
@@ -24,6 +23,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $bag = new bag();
         $bag->set('name', str_random(40));
         $bag->set('notes', str_random(40));
+
         return $bag;
     }
 
@@ -36,7 +36,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
-        
+
         $this->artisan('migrate:fresh');
         $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\LegalEntityServiceProvider', '--force' => true]);
         $this->artisan('lara-ore:user:install');

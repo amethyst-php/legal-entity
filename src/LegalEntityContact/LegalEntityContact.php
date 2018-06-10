@@ -4,9 +4,9 @@ namespace Railken\LaraOre\LegalEntityContact;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Railken\Laravel\Manager\Contracts\EntityContract;
-use Railken\LaraOre\Taxonomy\Taxonomy;
 use Railken\LaraOre\LegalEntity\LegalEntity;
+use Railken\LaraOre\Taxonomy\Taxonomy;
+use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class LegalEntityContact extends Model implements EntityContract
 {
@@ -18,7 +18,7 @@ class LegalEntityContact extends Model implements EntityContract
      * @var array
      */
     protected $fillable = [
-        'notes', 'value'
+        'notes', 'value',
     ];
 
     /**

@@ -13,10 +13,10 @@ return [
     'table' => 'ore_legal_entities',
 
     'router' => [
-        'prefix' => 'admin/legal-entities',
+        'prefix'      => 'admin/legal-entities',
         'middlewares' => [
             \Railken\LaraOre\RequestLoggerMiddleware::class,
             'auth:api',
-        ]
-    ]
+        ],
+    ],
 ];
