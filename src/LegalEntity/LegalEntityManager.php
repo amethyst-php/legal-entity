@@ -28,6 +28,7 @@ class LegalEntityManager extends ModelManager
         Attributes\DeletedAt\DeletedAtAttribute::class,
         Attributes\Notes\NotesAttribute::class,
         Attributes\CountryIso\CountryIsoAttribute::class,
+        Attributes\VatNumber\VatNumberAttribute::class,
     ];
 
     /**

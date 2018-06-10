@@ -19,6 +19,7 @@ class LegalEntity extends Model implements EntityContract
         'name',
         'notes',
         'country_iso',
+        'vat_number',
     ];
 
     /**

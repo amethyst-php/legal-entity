@@ -17,6 +17,7 @@ class CreateLegalEntitiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('country_iso')->nullable();
+            $table->string('vat_number')->nullable();
             $table->text('notes')->nullable();
             $table->softDeletes();
             $table->timestamps();

@@ -18,6 +18,7 @@ class LegalEntitiesController extends RestController
         'id',
         'name',
         'country_iso',
+        'vat_number',
         'notes',
         'created_at',
         'updated_at',
@@ -26,6 +27,7 @@ class LegalEntitiesController extends RestController
     protected static $fillable = [
         'name',
         'country_iso',
+        'vat_number',
         'notes',
     ];
 
