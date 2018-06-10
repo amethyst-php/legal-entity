@@ -5,7 +5,6 @@ namespace Railken\LaraOre\LegalEntity\Attributes\CountryIso;
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class CountryIsoAttribute extends BaseAttribute
 {
@@ -62,7 +61,8 @@ class CountryIsoAttribute extends BaseAttribute
     public function valid(EntityContract $entity, $value)
     {
         try {
-            (new \League\ISO3166\ISO3166)->alpha2($value);
+            (new \League\ISO3166\ISO3166())->alpha2($value);
+
             return true;
         } catch (\Exception $e) {
             return false;
