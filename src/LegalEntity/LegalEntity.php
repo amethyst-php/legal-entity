@@ -15,7 +15,9 @@ class LegalEntity extends Model implements EntityContract
      *
      * @var array
      */
-    protected $fillable = ['id', 'name', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = [
+        'name',
+    ];
 
     /**
      * The attributes that should be mutated to dates.

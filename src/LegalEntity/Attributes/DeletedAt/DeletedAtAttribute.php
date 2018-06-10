@@ -47,8 +47,8 @@ class DeletedAtAttribute extends BaseAttribute
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentity.attributes.deleted_at.fill',
-        Tokens::PERMISSION_SHOW => 'legalentity.attributes.deleted_at.show',
+        Tokens::PERMISSION_FILL => 'legal_entity.attributes.deleted_at.fill',
+        Tokens::PERMISSION_SHOW => 'legal_entity.attributes.deleted_at.show',
     ];
 
     /**

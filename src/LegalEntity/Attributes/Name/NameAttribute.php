@@ -22,14 +22,14 @@ class NameAttribute extends BaseAttribute
      *
      * @var bool
      */
-    protected $required = false;
+    protected $required = true;
 
     /**
      * Is the attribute unique.
      *
      * @var bool
      */
-    protected $unique = false;
+    protected $unique = true;
 
     /**
      * List of all exceptions used in validation.
@@ -47,8 +47,8 @@ class NameAttribute extends BaseAttribute
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentity.attributes.name.fill',
-        Tokens::PERMISSION_SHOW => 'legalentity.attributes.name.show',
+        Tokens::PERMISSION_FILL => 'legal_entity.attributes.name.fill',
+        Tokens::PERMISSION_SHOW => 'legal_entity.attributes.name.show',
     ];
 
     /**

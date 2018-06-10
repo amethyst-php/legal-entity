@@ -47,8 +47,8 @@ class IdAttribute extends BaseAttribute
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentity.attributes.id.fill',
-        Tokens::PERMISSION_SHOW => 'legalentity.attributes.id.show',
+        Tokens::PERMISSION_FILL => 'legal_entity.attributes.id.fill',
+        Tokens::PERMISSION_SHOW => 'legal_entity.attributes.id.show',
     ];
 
     /**
