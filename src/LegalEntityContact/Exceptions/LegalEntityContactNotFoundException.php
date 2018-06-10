@@ -9,7 +9,7 @@ class LegalEntityContactNotFoundException extends LegalEntityContactException
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_NOT_FOUND';
+    protected $code = 'LEGAL_ENTITY_CONTACT_NOT_FOUND';
 
     /**
      * The message.

@@ -18,7 +18,7 @@ class LegalEntityContactCreatedAtNotDefinedException extends LegalEntityContactA
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_CREATED_AT_NOT_DEFINED';
+    protected $code = 'LEGAL_ENTITY_CONTACT_CREATED_AT_NOT_DEFINED';
 
     /**
      * The message.

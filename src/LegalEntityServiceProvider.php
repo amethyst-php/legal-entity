@@ -24,10 +24,10 @@ class LegalEntityServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutes();
 
-        /*config(['ore.user.permission.managers' => array_merge(Config::get('ore.user.permission.managers'), [
+        config(['ore.user.permission.managers' => array_merge(Config::get('ore.user.permission.managers'), [
             \Railken\LaraOre\LegalEntity\LegalEntityManager::class,
             \Railken\LaraOre\LegalEntityContact\LegalEntityContactManager::class,
-        ])]);*/
+        ])]);
     }
 
     /**
@@ -39,6 +39,7 @@ class LegalEntityServiceProvider extends ServiceProvider
     {
         $this->app->register(\Railken\Laravel\Manager\ManagerServiceProvider::class);
         $this->app->register(\Railken\LaraOre\ApiServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\TaxonomyServiceProvider::class);
         $this->app->register(\Railken\LaraOre\UserServiceProvider::class);
         $this->mergeConfigFrom(__DIR__.'/../config/ore.legal-entity.php', 'ore.legal-entity');
         $this->mergeConfigFrom(__DIR__.'/../config/ore.legal-entity-contact.php', 'ore.legal-entity-contact');

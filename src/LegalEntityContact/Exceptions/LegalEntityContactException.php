@@ -19,7 +19,7 @@ abstract class LegalEntityContactException extends Exception implements Exceptio
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_ERROR';
+    protected $code = 'LEGAL_ENTITY_CONTACT_ERROR';
 
     /**
      * The message.

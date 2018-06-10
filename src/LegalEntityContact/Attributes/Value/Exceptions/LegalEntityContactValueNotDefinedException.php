@@ -1,29 +1,29 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntityContact\Attributes\Name\Exceptions;
+namespace Railken\LaraOre\LegalEntityContact\Attributes\Value\Exceptions;
 
 use Railken\LaraOre\LegalEntityContact\Exceptions\LegalEntityContactAttributeException;
 
-class LegalEntityContactNameNotUniqueException extends LegalEntityContactAttributeException
+class LegalEntityContactValueNotDefinedException extends LegalEntityContactAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
-    protected $attribute = 'name';
+    protected $attribute = 'value';
 
     /**
      * The code to identify the error.
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_NAME_NOT_UNIQUE';
+    protected $code = 'LEGALENTITYCONTACT_VALUE_NOT_DEFINED';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = 'The %s is not unique';
+    protected $message = 'The %s is required';
 }

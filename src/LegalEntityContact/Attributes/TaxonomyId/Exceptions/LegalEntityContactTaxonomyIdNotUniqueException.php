@@ -1,29 +1,29 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntityContact\Attributes\Name\Exceptions;
+namespace Railken\LaraOre\LegalEntityContact\Attributes\TaxonomyId\Exceptions;
 
 use Railken\LaraOre\LegalEntityContact\Exceptions\LegalEntityContactAttributeException;
 
-class LegalEntityContactNameNotValidException extends LegalEntityContactAttributeException
+class LegalEntityContactTaxonomyIdNotUniqueException extends LegalEntityContactAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
-    protected $attribute = 'name';
+    protected $attribute = 'taxonomy_id';
 
     /**
      * The code to identify the error.
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_NAME_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_CONTACT_TAXONOMY_ID_NOT_UNIQUE';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = 'The %s is not valid';
+    protected $message = 'The %s is not unique';
 }

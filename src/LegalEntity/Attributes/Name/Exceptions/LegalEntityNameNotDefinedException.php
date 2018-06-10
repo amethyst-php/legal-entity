@@ -18,7 +18,7 @@ class LegalEntityNameNotDefinedException extends LegalEntityAttributeException
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_NAME_NOT_DEFINED';
+    protected $code = 'LEGAL_ENTITY_NAME_NOT_DEFINED';
 
     /**
      * The message.

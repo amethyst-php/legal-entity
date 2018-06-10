@@ -18,7 +18,7 @@ class LegalEntityIdNotAuthorizedException extends LegalEntityAttributeException
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_ID_NOT_AUTHTORIZED';
+    protected $code = 'LEGAL_ENTITY_ID_NOT_AUTHTORIZED';
 
     /**
      * The message.

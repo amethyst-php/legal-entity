@@ -43,4 +43,11 @@ class ApiTest extends BaseTest
         $this->signIn();
         $this->commonTest($this->getBaseUrl(), $parameters = $this->getParameters());
     }
+
+    public function testTaxonomyName()
+    {
+        # POST /
+        $response = $this->post($this->getBaseUrl(), $this->getParametersWithTaxonomyName()->toArray());
+        $this->assertOrPrint($response, 201);
+    }
 }

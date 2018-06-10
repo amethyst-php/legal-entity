@@ -18,7 +18,7 @@ class LegalEntityContactUpdatedAtNotValidException extends LegalEntityContactAtt
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_UPDATED_AT_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_CONTACT_UPDATED_AT_NOT_VALID';
 
     /**
      * The message.

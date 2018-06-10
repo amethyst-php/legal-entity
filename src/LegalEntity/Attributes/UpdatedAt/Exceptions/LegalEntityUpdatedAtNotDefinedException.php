@@ -18,7 +18,7 @@ class LegalEntityUpdatedAtNotDefinedException extends LegalEntityAttributeExcept
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_UPDATED_AT_NOT_DEFINED';
+    protected $code = 'LEGAL_ENTITY_UPDATED_AT_NOT_DEFINED';
 
     /**
      * The message.

@@ -18,7 +18,7 @@ class LegalEntityNameNotUniqueException extends LegalEntityAttributeException
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_NAME_NOT_UNIQUE';
+    protected $code = 'LEGAL_ENTITY_NAME_NOT_UNIQUE';
 
     /**
      * The message.

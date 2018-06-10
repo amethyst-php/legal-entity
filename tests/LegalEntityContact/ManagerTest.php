@@ -23,4 +23,10 @@ class ManagerTest extends BaseTest
     {
         $this->commonTest($this->getManager(), $this->getParameters());
     }
+
+    public function testTaxonomyName()
+    {
+        $result = $this->getManager()->create($this->getParametersWithTaxonomyName());
+        $this->assertEquals(true, $result->ok());
+    }
 }

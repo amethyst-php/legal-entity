@@ -18,7 +18,7 @@ class LegalEntityContactIdNotDefinedException extends LegalEntityContactAttribut
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_ID_NOT_DEFINED';
+    protected $code = 'LEGAL_ENTITY_CONTACT_ID_NOT_DEFINED';
 
     /**
      * The message.

@@ -18,7 +18,7 @@ class LegalEntityCreatedAtNotDefinedException extends LegalEntityAttributeExcept
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_CREATED_AT_NOT_DEFINED';
+    protected $code = 'LEGAL_ENTITY_CREATED_AT_NOT_DEFINED';
 
     /**
      * The message.

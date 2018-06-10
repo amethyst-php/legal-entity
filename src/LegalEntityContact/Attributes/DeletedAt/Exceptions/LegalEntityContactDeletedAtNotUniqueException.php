@@ -18,7 +18,7 @@ class LegalEntityContactDeletedAtNotUniqueException extends LegalEntityContactAt
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_DELETED_AT_NOT_UNIQUE';
+    protected $code = 'LEGAL_ENTITY_CONTACT_DELETED_AT_NOT_UNIQUE';
 
     /**
      * The message.

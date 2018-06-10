@@ -47,8 +47,8 @@ class CreatedAtAttribute extends BaseAttribute
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentitycontact.attributes.created_at.fill',
-        Tokens::PERMISSION_SHOW => 'legalentitycontact.attributes.created_at.show',
+        Tokens::PERMISSION_FILL => 'legal_entity_contact.attributes.created_at.fill',
+        Tokens::PERMISSION_SHOW => 'legal_entity_contact.attributes.created_at.show',
     ];
 
     /**

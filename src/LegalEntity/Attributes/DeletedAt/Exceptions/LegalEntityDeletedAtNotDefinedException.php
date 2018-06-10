@@ -18,7 +18,7 @@ class LegalEntityDeletedAtNotDefinedException extends LegalEntityAttributeExcept
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_DELETED_AT_NOT_DEFINED';
+    protected $code = 'LEGAL_ENTITY_DELETED_AT_NOT_DEFINED';
 
     /**
      * The message.

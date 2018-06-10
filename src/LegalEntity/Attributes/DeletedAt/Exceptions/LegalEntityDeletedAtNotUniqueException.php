@@ -18,7 +18,7 @@ class LegalEntityDeletedAtNotUniqueException extends LegalEntityAttributeExcepti
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_DELETED_AT_NOT_UNIQUE';
+    protected $code = 'LEGAL_ENTITY_DELETED_AT_NOT_UNIQUE';
 
     /**
      * The message.

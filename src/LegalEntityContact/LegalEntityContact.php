@@ -5,6 +5,8 @@ namespace Railken\LaraOre\LegalEntityContact;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Railken\Laravel\Manager\Contracts\EntityContract;
+use Railken\LaraOre\Taxonomy\Taxonomy;
+use Railken\LaraOre\LegalEntity\LegalEntity;
 
 class LegalEntityContact extends Model implements EntityContract
 {
@@ -16,7 +18,7 @@ class LegalEntityContact extends Model implements EntityContract
      * @var array
      */
     protected $fillable = [
-        'name'
+        'notes', 'value'
     ];
 
     /**
@@ -25,8 +27,6 @@ class LegalEntityContact extends Model implements EntityContract
      * @var array
      */
     protected $dates = ['deleted_at'];
-
-
 
     /**
      * Creates a new instance of the model.
@@ -37,5 +37,25 @@ class LegalEntityContact extends Model implements EntityContract
     {
         parent::__construct($attributes);
         $this->table = \Illuminate\Support\Facades\Config::get('ore.legal-entity-contact.table');
+    }
+
+    /**
+     * Get works.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function taxonomy()
+    {
+        return $this->belongsTo(Taxonomy::class);
+    }
+
+    /**
+     * Get works.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function legal_entity()
+    {
+        return $this->belongsTo(LegalEntity::class);
     }
 }

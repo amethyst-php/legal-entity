@@ -18,7 +18,7 @@ class LegalEntityContactCreatedAtNotUniqueException extends LegalEntityContactAt
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_CREATED_AT_NOT_UNIQUE';
+    protected $code = 'LEGAL_ENTITY_CONTACT_CREATED_AT_NOT_UNIQUE';
 
     /**
      * The message.

@@ -18,7 +18,7 @@ class LegalEntityNameNotValidException extends LegalEntityAttributeException
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_NAME_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_NAME_NOT_VALID';
 
     /**
      * The message.

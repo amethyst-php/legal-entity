@@ -19,7 +19,7 @@ abstract class LegalEntityException extends Exception implements ExceptionContra
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_ERROR';
+    protected $code = 'LEGAL_ENTITY_ERROR';
 
     /**
      * The message.

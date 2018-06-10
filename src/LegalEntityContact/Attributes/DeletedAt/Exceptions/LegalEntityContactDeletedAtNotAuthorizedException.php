@@ -18,7 +18,7 @@ class LegalEntityContactDeletedAtNotAuthorizedException extends LegalEntityConta
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_DELETED_AT_NOT_AUTHTORIZED';
+    protected $code = 'LEGAL_ENTITY_CONTACT_DELETED_AT_NOT_AUTHTORIZED';
 
     /**
      * The message.

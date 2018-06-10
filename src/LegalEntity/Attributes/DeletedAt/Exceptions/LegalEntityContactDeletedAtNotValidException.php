@@ -18,7 +18,7 @@ class LegalEntityContactDeletedAtNotValidException extends LegalEntityContactAtt
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_DELETED_AT_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_CONTACT_DELETED_AT_NOT_VALID';
 
     /**
      * The message.

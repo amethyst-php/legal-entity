@@ -1,29 +1,29 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntityContact\Attributes\Name\Exceptions;
+namespace Railken\LaraOre\LegalEntityContact\Attributes\LegalEntityId\Exceptions;
 
 use Railken\LaraOre\LegalEntityContact\Exceptions\LegalEntityContactAttributeException;
 
-class LegalEntityContactNameNotDefinedException extends LegalEntityContactAttributeException
+class LegalEntityContactLegalEntityIdNotValidException extends LegalEntityContactAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
-    protected $attribute = 'name';
+    protected $attribute = 'legal_entity_id';
 
     /**
      * The code to identify the error.
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_NAME_NOT_DEFINED';
+    protected $code = 'LEGAL_ENTITY_CONTACT_LEGAL_ENTITY_ID_NOT_VALID';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = 'The %s is required';
+    protected $message = 'The %s is not valid';
 }

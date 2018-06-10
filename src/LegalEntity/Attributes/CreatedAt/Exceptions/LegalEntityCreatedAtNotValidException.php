@@ -18,7 +18,7 @@ class LegalEntityCreatedAtNotValidException extends LegalEntityAttributeExceptio
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_CREATED_AT_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_CREATED_AT_NOT_VALID';
 
     /**
      * The message.

@@ -1,20 +1,20 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntityContact\Attributes\Name;
+namespace Railken\LaraOre\LegalEntityContact\Attributes\Notes;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
 use Respect\Validation\Validator as v;
 
-class NameAttribute extends BaseAttribute
+class NotesAttribute extends BaseAttribute
 {
     /**
      * Name attribute.
      *
      * @var string
      */
-    protected $name = 'name';
+    protected $name = 'notes';
 
     /**
      * Is the attribute required
@@ -37,18 +37,18 @@ class NameAttribute extends BaseAttribute
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_DEFINED    => Exceptions\LegalEntityContactNameNotDefinedException::class,
-        Tokens::NOT_VALID      => Exceptions\LegalEntityContactNameNotValidException::class,
-        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntityContactNameNotAuthorizedException::class,
-        Tokens::NOT_UNIQUE     => Exceptions\LegalEntityContactNameNotUniqueException::class,
+        Tokens::NOT_DEFINED    => Exceptions\LegalEntityContactNotesNotDefinedException::class,
+        Tokens::NOT_VALID      => Exceptions\LegalEntityContactNotesNotValidException::class,
+        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntityContactNotesNotAuthorizedException::class,
+        Tokens::NOT_UNIQUE     => Exceptions\LegalEntityContactNotesNotUniqueException::class,
     ];
 
     /**
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentitycontact.attributes.name.fill',
-        Tokens::PERMISSION_SHOW => 'legalentitycontact.attributes.name.show',
+        Tokens::PERMISSION_FILL => 'legal_entity_contact.attributes.notes.fill',
+        Tokens::PERMISSION_SHOW => 'legal_entity_contact.attributes.notes.show',
     ];
 
     /**

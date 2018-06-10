@@ -18,7 +18,7 @@ class LegalEntityContactIdNotValidException extends LegalEntityContactAttributeE
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_ID_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_CONTACT_ID_NOT_VALID';
 
     /**
      * The message.

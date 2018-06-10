@@ -18,7 +18,7 @@ class LegalEntityUpdatedAtNotUniqueException extends LegalEntityAttributeExcepti
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_UPDATED_AT_NOT_UNIQUE';
+    protected $code = 'LEGAL_ENTITY_UPDATED_AT_NOT_UNIQUE';
 
     /**
      * The message.

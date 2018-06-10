@@ -47,8 +47,8 @@ class UpdatedAtAttribute extends BaseAttribute
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentitycontact.attributes.updated_at.fill',
-        Tokens::PERMISSION_SHOW => 'legalentitycontact.attributes.updated_at.show',
+        Tokens::PERMISSION_FILL => 'legal_entity_contact.attributes.updated_at.fill',
+        Tokens::PERMISSION_SHOW => 'legal_entity_contact.attributes.updated_at.show',
     ];
 
     /**

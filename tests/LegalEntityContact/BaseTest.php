@@ -3,6 +3,9 @@
 namespace Railken\LaraOre\Tests\LegalEntityContact;
 
 use Illuminate\Support\Facades\File;
+use Railken\LaraOre\LegalEntity\LegalEntityManager;
+use Railken\LaraOre\LegalEntityContact\LegalEntityContactManager;
+use Railken\LaraOre\Taxonomy\TaxonomyManager;
 use Railken\Bag;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
@@ -14,16 +17,55 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         ];
     }
 
+    public function newLegalEntity()
+    {
+        $bag = new Bag();
+        $bag->set('name', str_random(40));
+        $bag->set('notes', str_random(40));
+        
+        $lem = new LegalEntityManager();
+
+        return $lem->create($bag)->getResource();
+    }
+
+
+    public function newTaxonomy()
+    {
+        $lecm = new LegalEntityContactManager();
+
+        $bag = new Bag();
+        $bag->set('name', 'Ban');
+        $bag->set('vocabulary_id', $lecm->getTaxonomyVocabulary()->id);
+        
+        $le = new TaxonomyManager();
+
+        return $le->create($bag)->getResource();
+    }
+
     /**
-     * Retrieve correct bag of parameters.
+     * Retrieve correct Bag of parameters.
      *
      * @return Bag
      */
     public function getParameters()
     {
-        $bag = new bag();
-        $bag->set('name', str_random(40));
+        $bag = new Bag();
+        $bag->set('value', str_random(40));
+        $bag->set('notes', str_random(40));
+        $bag->set('taxonomy_id', $this->newTaxonomy()->id);
+        //$bag->set('taxonomy_name', "email");
+        $bag->set('legal_entity_id', $this->newLegalEntity()->id);
         return $bag;
+    }
+
+    /**
+     * Get parameters with taxonomy name
+     *
+     * @return Bag
+     */
+    public function getParametersWithTaxonomyName()
+    {
+        return $this->getParameters()->remove('taxonomy_id')->set('taxonomy_name', 'email');
     }
 
     /**

@@ -16,7 +16,7 @@ abstract class LegalEntityAttributeException extends LegalEntityException
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_ATTRIBUTE_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_ATTRIBUTE_NOT_VALID';
 
     /**
      * The message.

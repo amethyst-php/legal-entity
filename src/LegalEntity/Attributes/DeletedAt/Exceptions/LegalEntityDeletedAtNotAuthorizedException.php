@@ -18,7 +18,7 @@ class LegalEntityDeletedAtNotAuthorizedException extends LegalEntityAttributeExc
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_DELETED_AT_NOT_AUTHTORIZED';
+    protected $code = 'LEGAL_ENTITY_DELETED_AT_NOT_AUTHTORIZED';
 
     /**
      * The message.

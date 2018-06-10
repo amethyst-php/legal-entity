@@ -16,13 +16,21 @@ class LegalEntityContactsController extends RestController
 
     protected static $query = [
         'id',
-        'name',
+        'value',
+        'notes',
+        'legal_entity_id',
+        'taxonomy_id',
+        'taxonomy_name',
         'created_at',
         'updated_at'
     ];
 
     protected static $fillable = [
-        'name',
+        'value',
+        'notes',
+        'legal_entity_id',
+        'taxonomy_id',
+        'taxonomy_name',
     ];
 
     /**

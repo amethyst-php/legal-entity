@@ -18,7 +18,7 @@ class LegalEntityCreatedAtNotAuthorizedException extends LegalEntityAttributeExc
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_CREATED_AT_NOT_AUTHTORIZED';
+    protected $code = 'LEGAL_ENTITY_CREATED_AT_NOT_AUTHTORIZED';
 
     /**
      * The message.

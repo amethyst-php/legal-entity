@@ -12,6 +12,8 @@ return [
     */
     'table' => 'ore_legal_entity_contacts',
 
+    'taxonomy' => 'LEGAL_ENTITY_CONTACT',
+
     'router' => [
         'prefix' => 'admin/legal-entity-contacts',
         'middlewares' => [

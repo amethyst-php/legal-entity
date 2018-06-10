@@ -16,7 +16,7 @@ abstract class LegalEntityContactAttributeException extends LegalEntityContactEx
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_ATTRIBUTE_NOT_VALID';
+    protected $code = 'LEGAL_ENTITY_CONTACT_ATTRIBUTE_NOT_VALID';
 
     /**
      * The message.

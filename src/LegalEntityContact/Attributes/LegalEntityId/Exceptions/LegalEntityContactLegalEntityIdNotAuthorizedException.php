@@ -1,24 +1,24 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntityContact\Attributes\Name\Exceptions;
+namespace Railken\LaraOre\LegalEntityContact\Attributes\LegalEntityId\Exceptions;
 
 use Railken\LaraOre\LegalEntityContact\Exceptions\LegalEntityContactAttributeException;
 
-class LegalEntityContactNameNotAuthorizedException extends LegalEntityContactAttributeException
+class LegalEntityContactLegalEntityIdNotAuthorizedException extends LegalEntityContactAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
-    protected $attribute = 'name';
+    protected $attribute = 'legal_entity_id';
 
     /**
      * The code to identify the error.
      *
      * @var string
      */
-    protected $code = 'LEGALENTITYCONTACT_NAME_NOT_AUTHTORIZED';
+    protected $code = 'LEGAL_ENTITY_CONTACT_LEGAL_ENTITY_ID_NOT_AUTHTORIZED';
 
     /**
      * The message.
