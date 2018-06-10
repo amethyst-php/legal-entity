@@ -26,6 +26,8 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $bag->set('country_iso', 'IT');
         $bag->set('code_vat', '203458239B01');
         $bag->set('code_tin', '203458239B01');
+        $bag->set('code_it_rea', '123');
+        $bag->set('code_it_sia', '123');
         return $bag;
     }
 
