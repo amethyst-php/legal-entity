@@ -2,10 +2,10 @@
 
 namespace Railken\LaraOre\Http\Controllers;
 
+use Illuminate\Support\Facades\Config;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
 use Railken\LaraOre\LegalEntity\LegalEntityManager;
-use Illuminate\Support\Facades\Config;
 
 class LegalEntitiesController extends RestController
 {
