@@ -5,7 +5,7 @@ namespace Railken\LaraOre\LegalEntity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Config;
-use Railken\Laravel\Manager\Contracts\EntityContract;
+use Railken\LaraOre\Address\Address;
 
 class LegalEntity extends Model implements EntityContract
 {
@@ -20,6 +20,7 @@ class LegalEntity extends Model implements EntityContract
         'name',
         'notes',
         'country_iso',
+        'registered_office_address_id',
     ];
 
     /**
@@ -39,5 +40,13 @@ class LegalEntity extends Model implements EntityContract
         $this->fillable = array_merge($this->fillable, array_keys(Config::get('ore.legal-entity.attributes')));
         $this->table = Config::get('ore.legal-entity.table');
         parent::__construct($attributes);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function registered_office_address()
+    {
+        return $this->belongsTo(Address::class);
     }
 }

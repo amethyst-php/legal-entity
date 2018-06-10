@@ -23,6 +23,9 @@ class CreateLegalEntitiesTable extends Migration
                 $table->string($name)->nullable();
             }
 
+            $table->integer('registered_office_address_id')->unsigned();
+            $table->foreign('registered_office_address_id')->references('id')->on(Config::get('ore.address.table'));
+
             $table->text('notes')->nullable();
             $table->softDeletes();
             $table->timestamps();

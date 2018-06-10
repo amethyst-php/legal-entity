@@ -2,6 +2,7 @@
 
 namespace Railken\LaraOre\Tests\LegalEntity;
 
+use Railken\LaraOre\Address\AddressManager;
 use Railken\Bag;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
@@ -28,8 +29,28 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $bag->set('code_tin', '203458239B01');
         $bag->set('code_it_rea', '123');
         $bag->set('code_it_sia', '123');
-
+        $bag->set('registered_office_address_id', $this->newAddress()->id);
         return $bag;
+    }
+
+    /**
+     * New address.
+     *
+     * @return \Railken\LaraOre\Address\Address
+     */
+    public function newAddress()
+    {
+        $am = new AddressManager();
+
+        $bag = new Bag();
+        $bag->set('name', 'El. psy. congroo.');
+        $bag->set('street', str_random(40));
+        $bag->set('zip_code', '00100');
+        $bag->set('city', 'ROME');
+        $bag->set('province', 'RM');
+        $bag->set('country', 'IT');
+
+        return $am->create($bag)->getResource();
     }
 
     /**
