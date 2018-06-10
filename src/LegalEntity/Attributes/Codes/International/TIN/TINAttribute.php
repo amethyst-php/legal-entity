@@ -1,20 +1,20 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\CodeITREA;
+namespace Railken\LaraOre\LegalEntity\Attributes\Codes\International\TIN;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
 use Respect\Validation\Validator as v;
 
-class CodeITREAAttribute extends BaseAttribute
+class TINAttribute extends BaseAttribute
 {
     /**
      * Name attribute.
      *
      * @var string
      */
-    protected $name = 'code_it_rea';
+    protected $name = 'code_tin';
 
     /**
      * Is the attribute required
@@ -37,18 +37,18 @@ class CodeITREAAttribute extends BaseAttribute
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_DEFINED    => Exceptions\LegalEntityCodeITREANotDefinedException::class,
-        Tokens::NOT_VALID      => Exceptions\LegalEntityCodeITREANotValidException::class,
-        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntityCodeITREANotAuthorizedException::class,
-        Tokens::NOT_UNIQUE     => Exceptions\LegalEntityCodeITREANotUniqueException::class,
+        Tokens::NOT_DEFINED    => Exceptions\LegalEntityTINNotDefinedException::class,
+        Tokens::NOT_VALID      => Exceptions\LegalEntityTINNotValidException::class,
+        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntityTINNotAuthorizedException::class,
+        Tokens::NOT_UNIQUE     => Exceptions\LegalEntityTINNotUniqueException::class,
     ];
 
     /**
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentity.attributes.code_it_rea.fill',
-        Tokens::PERMISSION_SHOW => 'legalentity.attributes.code_it_rea.show',
+        Tokens::PERMISSION_FILL => 'legalentity.attributes.code_tin.fill',
+        Tokens::PERMISSION_SHOW => 'legalentity.attributes.code_tin.show',
     ];
 
     /**

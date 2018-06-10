@@ -1,13 +1,13 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\CodeITSIA;
+namespace Railken\LaraOre\LegalEntity\Attributes\Codes\IT\SIA;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
 use Respect\Validation\Validator as v;
 
-class CodeITSIAAttribute extends BaseAttribute
+class SIAAttribute extends BaseAttribute
 {
     /**
      * Name attribute.
@@ -37,10 +37,10 @@ class CodeITSIAAttribute extends BaseAttribute
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_DEFINED    => Exceptions\LegalEntityCodeITSIANotDefinedException::class,
-        Tokens::NOT_VALID      => Exceptions\LegalEntityCodeITSIANotValidException::class,
-        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntityCodeITSIANotAuthorizedException::class,
-        Tokens::NOT_UNIQUE     => Exceptions\LegalEntityCodeITSIANotUniqueException::class,
+        Tokens::NOT_DEFINED    => Exceptions\LegalEntitySIANotDefinedException::class,
+        Tokens::NOT_VALID      => Exceptions\LegalEntitySIANotValidException::class,
+        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntitySIANotAuthorizedException::class,
+        Tokens::NOT_UNIQUE     => Exceptions\LegalEntitySIANotUniqueException::class,
     ];
 
     /**

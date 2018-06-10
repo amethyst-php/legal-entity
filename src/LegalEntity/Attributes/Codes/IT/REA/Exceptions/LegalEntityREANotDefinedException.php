@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\CodeITREA\Exceptions;
+namespace Railken\LaraOre\LegalEntity\Attributes\Codes\IT\REA\Exceptions;
 
 use Railken\LaraOre\LegalEntity\Exceptions\LegalEntityAttributeException;
 
-class LegalEntityCodeITREANotAuthorizedException extends LegalEntityAttributeException
+class LegalEntityREANotDefinedException extends LegalEntityAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
@@ -18,12 +18,12 @@ class LegalEntityCodeITREANotAuthorizedException extends LegalEntityAttributeExc
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_CODEIT_REA_NOT_AUTHTORIZED';
+    protected $code = 'LEGALENTITY_CODEIT_REA_NOT_DEFINED';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = "You're not authorized to interact with %s, missing %s permission";
+    protected $message = 'The %s is required';
 }

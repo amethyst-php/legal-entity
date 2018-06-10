@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Config;
 use Railken\LaraOre\Address\Address;
+use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class LegalEntity extends Model implements EntityContract
 {

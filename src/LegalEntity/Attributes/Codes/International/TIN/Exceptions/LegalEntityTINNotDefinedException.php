@@ -1,29 +1,29 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\CodeITSIA\Exceptions;
+namespace Railken\LaraOre\LegalEntity\Attributes\Codes\International\TIN\Exceptions;
 
 use Railken\LaraOre\LegalEntity\Exceptions\LegalEntityAttributeException;
 
-class LegalEntityCodeITSIANotValidException extends LegalEntityAttributeException
+class LegalEntityTINNotDefinedException extends LegalEntityAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
-    protected $attribute = 'code_it_sia';
+    protected $attribute = 'code_tin';
 
     /**
      * The code to identify the error.
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_CODEIT_SIA_NOT_VALID';
+    protected $code = 'LEGALENTITY_CODETIN_NOT_DEFINED';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = 'The %s is not valid';
+    protected $message = 'The %s is required';
 }

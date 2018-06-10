@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\CodeTIN\Exceptions;
+namespace Railken\LaraOre\LegalEntity\Attributes\Codes\International\TIN\Exceptions;
 
 use Railken\LaraOre\LegalEntity\Exceptions\LegalEntityAttributeException;
 
-class LegalEntityCodeTINNotValidException extends LegalEntityAttributeException
+class LegalEntityTINNotAuthorizedException extends LegalEntityAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
@@ -18,12 +18,12 @@ class LegalEntityCodeTINNotValidException extends LegalEntityAttributeException
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_CODETIN_NOT_VALID';
+    protected $code = 'LEGALENTITY_CODETIN_NOT_AUTHTORIZED';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = 'The %s is not valid';
+    protected $message = "You're not authorized to interact with %s, missing %s permission";
 }

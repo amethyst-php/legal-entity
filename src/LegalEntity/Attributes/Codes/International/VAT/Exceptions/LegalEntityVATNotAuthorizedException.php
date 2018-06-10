@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\CodeVAT\Exceptions;
+namespace Railken\LaraOre\LegalEntity\Attributes\Codes\International\VAT\Exceptions;
 
 use Railken\LaraOre\LegalEntity\Exceptions\LegalEntityAttributeException;
 
-class LegalEntityCodeVATNotDefinedException extends LegalEntityAttributeException
+class LegalEntityVATNotAuthorizedException extends LegalEntityAttributeException
 {
     /**
      * The reason (attribute) for which this exception is thrown.
@@ -18,12 +18,12 @@ class LegalEntityCodeVATNotDefinedException extends LegalEntityAttributeExceptio
      *
      * @var string
      */
-    protected $code = 'LEGALENTITY_CODEVAT_NOT_DEFINED';
+    protected $code = 'LEGALENTITY_CODEVAT_NOT_AUTHTORIZED';
 
     /**
      * The message.
      *
      * @var string
      */
-    protected $message = 'The %s is required';
+    protected $message = "You're not authorized to interact with %s, missing %s permission";
 }

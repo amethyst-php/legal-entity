@@ -1,20 +1,20 @@
 <?php
 
-namespace Railken\LaraOre\LegalEntity\Attributes\CodeVAT;
+namespace Railken\LaraOre\LegalEntity\Attributes\Codes\IT\REA;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
 use Respect\Validation\Validator as v;
 
-class CodeVATAttribute extends BaseAttribute
+class REAAttribute extends BaseAttribute
 {
     /**
      * Name attribute.
      *
      * @var string
      */
-    protected $name = 'code_vat';
+    protected $name = 'code_it_rea';
 
     /**
      * Is the attribute required
@@ -37,18 +37,18 @@ class CodeVATAttribute extends BaseAttribute
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_DEFINED    => Exceptions\LegalEntityCodeVATNotDefinedException::class,
-        Tokens::NOT_VALID      => Exceptions\LegalEntityCodeVATNotValidException::class,
-        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntityCodeVATNotAuthorizedException::class,
-        Tokens::NOT_UNIQUE     => Exceptions\LegalEntityCodeVATNotUniqueException::class,
+        Tokens::NOT_DEFINED    => Exceptions\LegalEntityREANotDefinedException::class,
+        Tokens::NOT_VALID      => Exceptions\LegalEntityREANotValidException::class,
+        Tokens::NOT_AUTHORIZED => Exceptions\LegalEntityREANotAuthorizedException::class,
+        Tokens::NOT_UNIQUE     => Exceptions\LegalEntityREANotUniqueException::class,
     ];
 
     /**
      * List of all permissions.
      */
     protected $permissions = [
-        Tokens::PERMISSION_FILL => 'legalentity.attributes.code_vat.fill',
-        Tokens::PERMISSION_SHOW => 'legalentity.attributes.code_vat.show',
+        Tokens::PERMISSION_FILL => 'legalentity.attributes.code_it_rea.fill',
+        Tokens::PERMISSION_SHOW => 'legalentity.attributes.code_it_rea.show',
     ];
 
     /**
