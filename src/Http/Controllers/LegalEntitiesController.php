@@ -17,6 +17,7 @@ class LegalEntitiesController extends RestController
     protected static $query = [
         'id',
         'name',
+        'country_iso',
         'notes',
         'created_at',
         'updated_at',
@@ -24,6 +25,7 @@ class LegalEntitiesController extends RestController
 
     protected static $fillable = [
         'name',
+        'country_iso',
         'notes',
     ];
 

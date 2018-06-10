@@ -21,7 +21,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $bag = new Bag();
         $bag->set('name', str_random(40));
         $bag->set('notes', str_random(40));
-
+        $bag->set('country_iso', 'IT');
         $lem = new LegalEntityManager();
 
         return $lem->create($bag)->getResource();
