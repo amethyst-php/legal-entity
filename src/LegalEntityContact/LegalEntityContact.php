@@ -40,8 +40,6 @@ class LegalEntityContact extends Model implements EntityContract
     }
 
     /**
-     * Get works.
-     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function taxonomy()
@@ -50,8 +48,6 @@ class LegalEntityContact extends Model implements EntityContract
     }
 
     /**
-     * Get works.
-     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function legal_entity()

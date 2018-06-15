@@ -15,7 +15,7 @@ class LegalEntitiesController extends RestController
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
-    protected static $query = [
+    public $queryable = [
         'id',
         'name',
         'country_iso',
@@ -25,7 +25,7 @@ class LegalEntitiesController extends RestController
         'updated_at',
     ];
 
-    protected static $fillable = [
+    public $fillable = [
         'name',
         'country_iso',
         'notes',
@@ -37,8 +37,8 @@ class LegalEntitiesController extends RestController
      */
     public function __construct(LegalEntityManager $manager)
     {
-        self::$query = array_merge(self::$query, array_keys(Config::get('ore.legal-entity.attributes')));
-        self::$fillable = array_merge(self::$fillable, array_keys(Config::get('ore.legal-entity.attributes')));
+        $this->queryable = array_merge($this->queryable, array_keys(Config::get('ore.legal-entity.attributes')));
+        $this->fillable = array_merge($this->fillable, array_keys(Config::get('ore.legal-entity.attributes')));
         $this->manager = $manager;
         $this->manager->setAgent($this->getUser());
         parent::__construct();

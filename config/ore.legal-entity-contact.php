@@ -15,7 +15,7 @@ return [
     'taxonomy' => 'LEGAL_ENTITY_CONTACT',
 
     'router' => [
-        'prefix'      => 'admin/legal-entity-contacts',
+        'prefix'      => '/admin/legal-entity-contacts',
         'middlewares' => [
             \Railken\LaraOre\RequestLoggerMiddleware::class,
             'auth:api',
