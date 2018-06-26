@@ -20,6 +20,7 @@ class LegalEntitiesController extends RestController
         'name',
         'country_iso',
         'notes',
+        'registered_office_address',
         'registered_office_address_id',
         'created_at',
         'updated_at',
@@ -29,6 +30,7 @@ class LegalEntitiesController extends RestController
         'name',
         'country_iso',
         'notes',
+        'registered_office_address',
         'registered_office_address_id',
     ];
 

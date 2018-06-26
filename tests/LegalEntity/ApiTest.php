@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\LegalEntity;
 
 use Railken\LaraOre\Support\Testing\ApiTestableTrait;
 use Illuminate\Support\Facades\Config;
+use Railken\LaraOre\LegalEntity\LegalEntityFaker;
 
 class ApiTest extends BaseTest
 {
@@ -27,6 +28,6 @@ class ApiTest extends BaseTest
     public function testSuccessCommon()
     {
         $this->signIn();
-        $this->commonTest($this->getBaseUrl(), $parameters = $this->getParameters());
+        $this->commonTest($this->getBaseUrl(), LegalEntityFaker::make());
     }
 }

@@ -18,7 +18,9 @@ class LegalEntityContactsController extends RestController
         'id',
         'value',
         'notes',
+        'legal_entity',
         'legal_entity_id',
+        'taxonomy',
         'taxonomy_id',
         'taxonomy_name',
         'created_at',
@@ -28,7 +30,9 @@ class LegalEntityContactsController extends RestController
     public $fillable = [
         'value',
         'notes',
+        'legal_entity',
         'legal_entity_id',
+        'taxonomy',
         'taxonomy_id',
         'taxonomy_name',
     ];

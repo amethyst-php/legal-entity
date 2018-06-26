@@ -12,7 +12,8 @@
         "railken/lara-ore-taxonomy": "dev-master",
         "railken/lara-ore-address": "dev-master",
         "league/iso3166": "^2.1",
-        "dannyvankooten/vat.php": "^1.1"
+        "dannyvankooten/vat.php": "^1.1",
+        "fzaninotto/faker": "^1.7"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.9.2",

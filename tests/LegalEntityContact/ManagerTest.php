@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\LegalEntityContact;
 
 use Railken\LaraOre\LegalEntityContact\LegalEntityContactManager;
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
+use Railken\LaraOre\LegalEntityContact\LegalEntityContactFaker;
 
 class ManagerTest extends BaseTest
 {
@@ -21,12 +22,6 @@ class ManagerTest extends BaseTest
 
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getManager(), $this->getParameters());
-    }
-
-    public function testTaxonomyName()
-    {
-        $result = $this->getManager()->create($this->getParametersWithTaxonomyName());
-        $this->assertEquals(true, $result->ok());
+        $this->commonTest($this->getManager(), LegalEntityContactFaker::make());
     }
 }

@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\LegalEntityContact;
 
 use Railken\LaraOre\Support\Testing\ApiTestableTrait;
 use Illuminate\Support\Facades\Config;
+use Railken\LaraOre\LegalEntityContact\LegalEntityContactFaker;
 
 class ApiTest extends BaseTest
 {
@@ -27,13 +28,6 @@ class ApiTest extends BaseTest
     public function testSuccessCommon()
     {
         $this->signIn();
-        $this->commonTest($this->getBaseUrl(), $parameters = $this->getParameters());
-    }
-
-    public function testTaxonomyName()
-    {
-        // POST /
-        $response = $this->post($this->getBaseUrl(), $this->getParametersWithTaxonomyName()->toArray());
-        $this->assertOrPrint($response, 201);
+        $this->commonTest($this->getBaseUrl(), LegalEntityContactFaker::make());
     }
 }

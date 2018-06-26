@@ -98,43 +98,4 @@ class TaxonomyIdAttribute extends BelongsToAttribute
     {
         return parent::valid($entity, $value) && $value->vocabulary->id === $this->getManager()->getTaxonomyVocabulary()->id;
     }
-
-    /**
-     * Update entity value.
-     *
-     * @param EntityContract       $entity
-     * @param ParameterBagContract $parameters
-     *
-     * @return Collection
-     */
-    public function update(EntityContract $entity, ParameterBagContract $parameters)
-    {
-        // "taxonomy_value" may be sent.
-        $errors = new Collection();
-
-        if ($parameters->exists('taxonomy_name') && !$parameters->exists('taxonomy_id') && !$parameters->exists('taxonomy')) {
-            $m = $this->getRelationManager($entity);
-
-            $criteria = [
-                'vocabulary_id' => $this->getManager()->getTaxonomyVocabulary()->id,
-                'name'          => $parameters->get('taxonomy_name'),
-            ];
-
-            $resource = $m->getRepository()->findOneBy($criteria);
-
-            if (!$resource) {
-                $result = $m->create($criteria);
-
-                if (!$result->ok()) {
-                    $errors->merge($result->getErrors());
-                }
-
-                $resource = $result->getResource();
-            }
-
-            $parameters->set('taxonomy', $resource);
-        }
-
-        return $errors->merge(parent::update($entity, $parameters));
-    }
 }
