@@ -38,7 +38,6 @@ class LegalEntityServiceProvider extends ServiceProvider
         $this->app->register(\Railken\LaraOre\ApiServiceProvider::class);
         $this->app->register(\Railken\LaraOre\AddressServiceProvider::class);
         $this->app->register(\Railken\LaraOre\TaxonomyServiceProvider::class);
-        $this->app->register(\Railken\LaraOre\UserServiceProvider::class);
         $this->mergeConfigFrom(__DIR__.'/../config/ore.legal-entity.php', 'ore.legal-entity');
         $this->mergeConfigFrom(__DIR__.'/../config/ore.legal-entity-contact.php', 'ore.legal-entity-contact');
     }
