@@ -27,6 +27,6 @@ class ApiTest extends BaseTest
      */
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getBaseUrl(), LegalEntityFaker::make());
+        $this->commonTest($this->getBaseUrl(), LegalEntityFaker::make()->parameters());
     }
 }

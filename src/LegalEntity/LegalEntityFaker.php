@@ -5,13 +5,19 @@ namespace Railken\LaraOre\LegalEntity;
 use Railken\Bag;
 use Faker\Factory;
 use Railken\LaraOre\Address\AddressFaker;
+use Railken\Laravel\Manager\BaseFaker;
 
-class LegalEntityFaker
+class LegalEntityFaker extends BaseFaker
 {
     /**
-     * @return array
+     * @var string
      */
-    public static function make()
+    protected $manager = LegalEntityManager::class;
+
+    /**
+     * @return \Railken\Bag
+     */
+    public function parameters()
     {
         $faker = Factory::create();
         
@@ -21,7 +27,7 @@ class LegalEntityFaker
         $bag->set('country_iso', 'US');
         $bag->set('code_vat', '203458239B01');
         $bag->set('code_tin', '203458239B01');
-        $bag->set('registered_office_address', AddressFaker::make()->toArray());
+        $bag->set('registered_office_address', AddressFaker::make()->parameters()->toArray());
 
         return $bag;
     }
