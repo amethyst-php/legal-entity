@@ -2,9 +2,9 @@
 
 namespace Railken\LaraOre\Tests\LegalEntity;
 
+use Railken\LaraOre\LegalEntity\LegalEntityFaker;
 use Railken\LaraOre\LegalEntity\LegalEntityManager;
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
-use Railken\LaraOre\LegalEntity\LegalEntityFaker;
 
 class ManagerTest extends BaseTest
 {

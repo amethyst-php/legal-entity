@@ -2,10 +2,8 @@
 
 namespace Railken\LaraOre\LegalEntityContact\Attributes\TaxonomyId;
 
-use Illuminate\Support\Collection;
 use Railken\Laravel\Manager\Attributes\BelongsToAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
-use Railken\Laravel\Manager\Contracts\ParameterBagContract;
 use Railken\Laravel\Manager\Tokens;
 
 class TaxonomyIdAttribute extends BelongsToAttribute

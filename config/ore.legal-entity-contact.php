@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Table
@@ -14,11 +13,21 @@ return [
 
     'taxonomy' => 'LEGAL_ENTITY_CONTACT',
 
-    'router' => [
-        'prefix'      => '/admin/legal-entity-contacts',
-        'middlewares' => [
-            \Railken\LaraOre\RequestLoggerMiddleware::class,
-            'auth:api',
+    /*
+    |--------------------------------------------------------------------------
+    | Http configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the routes
+    |
+    */
+    'http' => [
+        'admin' => [
+            'enabled'    => true,
+            'controller' => Railken\LaraOre\Http\Controllers\Admin\LegalEntityContactsController::class,
+            'router'     => [
+                'prefix'      => '/admin/legal-entity-contacts',
+            ],
         ],
     ],
 ];

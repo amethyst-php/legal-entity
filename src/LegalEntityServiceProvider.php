@@ -2,6 +2,7 @@
 
 namespace Railken\LaraOre;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Railken\LaraOre\Api\Support\Router;
@@ -10,8 +11,6 @@ class LegalEntityServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -29,8 +28,6 @@ class LegalEntityServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {
@@ -44,29 +41,35 @@ class LegalEntityServiceProvider extends ServiceProvider
 
     /**
      * Load routes.
-     *
-     * @return void
      */
     public function loadRoutes()
     {
-        Router::group(array_merge(Config::get('ore.legal-entity.router'), [
-            'namespace' => 'Railken\LaraOre\Http\Controllers',
-        ]), function ($router) {
-            $router->get('/', ['uses' => 'LegalEntitiesController@index']);
-            $router->post('/', ['uses' => 'LegalEntitiesController@create']);
-            $router->put('/{id}', ['uses' => 'LegalEntitiesController@update']);
-            $router->delete('/{id}', ['uses' => 'LegalEntitiesController@remove']);
-            $router->get('/{id}', ['uses' => 'LegalEntitiesController@show']);
-        });
+        $config = Config::get('ore.legal-entity.http.admin');
 
-        Router::group(array_merge(Config::get('ore.legal-entity-contact.router'), [
-            'namespace' => 'Railken\LaraOre\Http\Controllers',
-        ]), function ($router) {
-            $router->get('/', ['uses' => 'LegalEntityContactsController@index']);
-            $router->post('/', ['uses' => 'LegalEntityContactsController@create']);
-            $router->put('/{id}', ['uses' => 'LegalEntityContactsController@update']);
-            $router->delete('/{id}', ['uses' => 'LegalEntityContactsController@remove']);
-            $router->get('/{id}', ['uses' => 'LegalEntityContactsController@show']);
-        });
+        if (Arr::get($config, 'enabled')) {
+            Router::group('admin', Arr::get($config, 'router'), function ($router) use ($config) {
+                $controller = Arr::get($config, 'controller');
+
+                $router->get('/', ['uses' => $controller.'@index']);
+                $router->post('/', ['uses' => $controller.'@create']);
+                $router->put('/{id}', ['uses' => $controller.'@update']);
+                $router->delete('/{id}', ['uses' => $controller.'@remove']);
+                $router->get('/{id}', ['uses' => $controller.'@show']);
+            });
+        }
+
+        $config = Config::get('ore.legal-entity-contact.http.admin');
+
+        if (Arr::get($config, 'enabled')) {
+            Router::group('admin', Arr::get($config, 'router'), function ($router) use ($config) {
+                $controller = Arr::get($config, 'controller');
+
+                $router->get('/', ['uses' => $controller.'@index']);
+                $router->post('/', ['uses' => $controller.'@create']);
+                $router->put('/{id}', ['uses' => $controller.'@update']);
+                $router->delete('/{id}', ['uses' => $controller.'@remove']);
+                $router->get('/{id}', ['uses' => $controller.'@show']);
+            });
+        }
     }
 }

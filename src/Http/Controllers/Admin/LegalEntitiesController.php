@@ -1,12 +1,13 @@
 <?php
 
-namespace Railken\LaraOre\Http\Controllers;
+namespace Railken\LaraOre\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Config;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\LegalEntityContact\LegalEntityContactManager;
+use Railken\LaraOre\LegalEntity\LegalEntityManager;
 
-class LegalEntityContactsController extends RestController
+class LegalEntitiesController extends RestController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestCreateTrait;
@@ -16,32 +17,30 @@ class LegalEntityContactsController extends RestController
 
     public $queryable = [
         'id',
-        'value',
+        'name',
+        'country_iso',
         'notes',
-        'legal_entity',
-        'legal_entity_id',
-        'taxonomy',
-        'taxonomy_id',
-        'taxonomy_name',
+        'registered_office_address',
+        'registered_office_address_id',
         'created_at',
         'updated_at',
     ];
 
     public $fillable = [
-        'value',
+        'name',
+        'country_iso',
         'notes',
-        'legal_entity',
-        'legal_entity_id',
-        'taxonomy',
-        'taxonomy_id',
-        'taxonomy_name',
+        'registered_office_address',
+        'registered_office_address_id',
     ];
 
     /**
      * Construct.
      */
-    public function __construct(LegalEntityContactManager $manager)
+    public function __construct(LegalEntityManager $manager)
     {
+        $this->queryable = array_merge($this->queryable, array_keys(Config::get('ore.legal-entity.attributes')));
+        $this->fillable = array_merge($this->fillable, array_keys(Config::get('ore.legal-entity.attributes')));
         $this->manager = $manager;
         $this->manager->setAgent($this->getUser());
         parent::__construct();

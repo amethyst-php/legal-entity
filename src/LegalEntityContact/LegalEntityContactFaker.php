@@ -2,11 +2,11 @@
 
 namespace Railken\LaraOre\LegalEntityContact;
 
-use Railken\Bag;
 use Faker\Factory;
+use Illuminate\Support\Facades\Config;
+use Railken\Bag;
 use Railken\LaraOre\LegalEntity\LegalEntityFaker;
 use Railken\LaraOre\Taxonomy\TaxonomyFaker;
-use Illuminate\Support\Facades\Config;
 use Railken\Laravel\Manager\BaseFaker;
 
 class LegalEntityContactFaker extends BaseFaker

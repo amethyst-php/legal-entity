@@ -9,8 +9,6 @@ class CreateLegalEntitiesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -34,8 +32,6 @@ class CreateLegalEntitiesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

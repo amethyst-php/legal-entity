@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Table
@@ -19,11 +18,21 @@ return [
         'code_it_sia' => \Railken\LaraOre\LegalEntity\Attributes\Codes\IT\SIA\SIAAttribute::class,
     ],
 
-    'router' => [
-        'prefix'      => '/admin/legal-entities',
-        'middlewares' => [
-            \Railken\LaraOre\RequestLoggerMiddleware::class,
-            'auth:api',
+    /*
+    |--------------------------------------------------------------------------
+    | Http configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the routes
+    |
+    */
+    'http' => [
+        'admin' => [
+            'enabled'    => true,
+            'controller' => Railken\LaraOre\Http\Controllers\Admin\LegalEntitiesController::class,
+            'router'     => [
+                'prefix'      => '/admin/legal-entities',
+            ],
         ],
     ],
 ];
