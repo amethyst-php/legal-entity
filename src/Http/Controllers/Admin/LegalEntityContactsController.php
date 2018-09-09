@@ -2,11 +2,10 @@
 
 namespace Railken\LaraOre\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\RestConfigurableController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\LegalEntityContact\LegalEntityContactManager;
 
-class LegalEntityContactsController extends RestController
+class LegalEntityContactsController extends RestConfigurableController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestCreateTrait;
@@ -14,6 +13,18 @@ class LegalEntityContactsController extends RestController
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
+    /**
+     * The config path.
+     *
+     * @var string
+     */
+    public $config = 'ore.legal-entity-contact';
+
+    /**
+     * The attributes that are queryable.
+     *
+     * @var array
+     */
     public $queryable = [
         'id',
         'value',
@@ -27,6 +38,11 @@ class LegalEntityContactsController extends RestController
         'updated_at',
     ];
 
+    /**
+     * The attributes that are fillable.
+     *
+     * @var array
+     */
     public $fillable = [
         'value',
         'notes',
@@ -36,24 +52,4 @@ class LegalEntityContactsController extends RestController
         'taxonomy_id',
         'taxonomy_name',
     ];
-
-    /**
-     * Construct.
-     */
-    public function __construct(LegalEntityContactManager $manager)
-    {
-        $this->manager = $manager;
-        $this->manager->setAgent($this->getUser());
-        parent::__construct();
-    }
-
-    /**
-     * Create a new instance for query.
-     *
-     * @return \Illuminate\Database\Query\Builder
-     */
-    public function getQuery()
-    {
-        return $this->manager->repository->getQuery();
-    }
 }
