@@ -3,28 +3,31 @@
 namespace Railken\LaraOre\Tests\LegalEntityContact;
 
 use Illuminate\Support\Facades\Config;
+use Railken\LaraOre\Api\Support\Testing\TestableBaseTrait;
 use Railken\LaraOre\LegalEntityContact\LegalEntityContactFaker;
-use Railken\LaraOre\Support\Testing\ApiTestableTrait;
 
 class ApiTest extends BaseTest
 {
-    use ApiTestableTrait;
+    use TestableBaseTrait;
 
     /**
-     * Retrieve basic url.
+     * Faker class.
      *
-     * @return string
+     * @var string
      */
-    public function getBaseUrl()
-    {
-        return Config::get('ore.api.router.prefix').Config::get('ore.legal-entity-contact.http.admin.router.prefix');
-    }
+    protected $faker = LegalEntityContactFaker::class;
 
     /**
-     * Test common requests.
+     * Router group resource.
+     *
+     * @var string
      */
-    public function testSuccessCommon()
-    {
-        $this->commonTest($this->getBaseUrl(), LegalEntityContactFaker::make()->parameters());
-    }
+    protected $group = 'admin';
+
+    /**
+     * Base path config.
+     *
+     * @var string
+     */
+    protected $config = 'ore.legal-entity-contact';
 }
