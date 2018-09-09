@@ -48,12 +48,20 @@ class LegalEntityManager extends ModelManager
      */
     public function __construct(AgentContract $agent = null)
     {
+        $this->entity = Config::get('ore.legal-entity.entity');
         $this->attributes = array_merge($this->attributes, array_values(Config::get('ore.legal-entity.attributes')));
 
-        $this->setRepository(new LegalEntityRepository($this));
-        $this->setSerializer(new LegalEntitySerializer($this));
-        $this->setValidator(new LegalEntityValidator($this));
-        $this->setAuthorizer(new LegalEntityAuthorizer($this));
+        $classRepository = Config::get('ore.legal-entity.repository');
+        $this->setRepository(new $classRepository($this));
+
+        $classSerializer = Config::get('ore.legal-entity.serializer');
+        $this->setSerializer(new $classSerializer($this));
+
+        $classAuthorizer = Config::get('ore.legal-entity.authorizer');
+        $this->setAuthorizer(new $classAuthorizer($this));
+
+        $classValidator = Config::get('ore.legal-entity.validator');
+        $this->setValidator(new $classValidator($this));
 
         parent::__construct($agent);
     }

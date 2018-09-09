@@ -49,10 +49,20 @@ class LegalEntityContactManager extends ModelManager
      */
     public function __construct(AgentContract $agent = null)
     {
-        $this->setRepository(new LegalEntityContactRepository($this));
-        $this->setSerializer(new LegalEntityContactSerializer($this));
-        $this->setValidator(new LegalEntityContactValidator($this));
-        $this->setAuthorizer(new LegalEntityContactAuthorizer($this));
+        $this->entity = Config::get('ore.legal-entity-contact.entity');
+        $this->attributes = array_merge($this->attributes, array_values(Config::get('ore.legal-entity-contact.attributes')));
+
+        $classRepository = Config::get('ore.legal-entity-contact.repository');
+        $this->setRepository(new $classRepository($this));
+
+        $classSerializer = Config::get('ore.legal-entity-contact.serializer');
+        $this->setSerializer(new $classSerializer($this));
+
+        $classAuthorizer = Config::get('ore.legal-entity-contact.authorizer');
+        $this->setAuthorizer(new $classAuthorizer($this));
+
+        $classValidator = Config::get('ore.legal-entity-contact.validator');
+        $this->setValidator(new $classValidator($this));
 
         parent::__construct($agent);
     }
@@ -69,7 +79,7 @@ class LegalEntityContactManager extends ModelManager
         $vm = new VocabularyManager();
         $resource = $vm->getRepository()->findOneBy(['name' => $vocabulary_name]);
 
-        if (!$resource) {
+        if ($resource == null) {
             $result = $vm->create(['name' => $vocabulary_name]);
 
             if (!$result->ok()) {

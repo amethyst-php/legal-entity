@@ -25,7 +25,7 @@ class LegalEntityContactFaker extends BaseFaker
 
         $bag = new Bag();
         $bag->set('value', $faker->name);
-        $bag->set('notes', $faker->realText);
+        $bag->set('notes', $faker->text);
         $bag->set('legal_entity', LegalEntityFaker::make()->parameters()->toArray());
         $bag->set('taxonomy', TaxonomyFaker::make()->parameters()->toArray());
         $bag->set('taxonomy.vocabulary.name', Config::get('ore.legal-entity-contact.taxonomy'));

@@ -63,7 +63,7 @@ class TaxonomyIdAttribute extends BelongsToAttribute
     /**
      * Retrieve eloquent relation.
      *
-     * @param EntityContract $entity
+     * @param \Railken\LaraOre\LegalEntityContact\LegalEntityContact $entity
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -75,7 +75,7 @@ class TaxonomyIdAttribute extends BelongsToAttribute
     /**
      * Retrieve relation manager.
      *
-     * @param EntityContract $entity
+     * @param \Railken\LaraOre\LegalEntityContact\LegalEntityContact $entity
      *
      * @return \Railken\Laravel\Manager\Contracts\ManagerContract
      */
@@ -94,6 +94,9 @@ class TaxonomyIdAttribute extends BelongsToAttribute
      */
     public function valid(EntityContract $entity, $value)
     {
-        return parent::valid($entity, $value) && $value->vocabulary->id === $this->getManager()->getTaxonomyVocabulary()->id;
+        /** @var \Railken\LaraOre\LegalEntityContact\LegalEntityContactManager */
+        $manager = $this->getManager();
+
+        return parent::valid($entity, $value) && $value->vocabulary->id === $manager->getTaxonomyVocabulary()->id;
     }
 }

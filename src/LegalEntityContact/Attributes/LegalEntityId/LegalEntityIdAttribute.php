@@ -63,7 +63,7 @@ class LegalEntityIdAttribute extends BelongsToAttribute
     /**
      * Retrieve eloquent relation.
      *
-     * @param EntityContract $entity
+     * @param \Railken\LaraOre\LegalEntityContact\LegalEntityContact $entity
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -75,7 +75,7 @@ class LegalEntityIdAttribute extends BelongsToAttribute
     /**
      * Retrieve relation manager.
      *
-     * @param EntityContract $entity
+     * @param \Railken\LaraOre\LegalEntityContact\LegalEntityContact $entity
      *
      * @return \Railken\Laravel\Manager\Contracts\ManagerContract
      */

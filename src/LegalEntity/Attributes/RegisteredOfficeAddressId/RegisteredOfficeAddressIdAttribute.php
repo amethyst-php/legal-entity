@@ -63,7 +63,7 @@ class RegisteredOfficeAddressIdAttribute extends BelongsToAttribute
     /**
      * Retrieve eloquent relation.
      *
-     * @param EntityContract $entity
+     * @param \Railken\LaraOre\LegalEntity\LegalEntity $entity
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -75,7 +75,7 @@ class RegisteredOfficeAddressIdAttribute extends BelongsToAttribute
     /**
      * Retrieve relation manager.
      *
-     * @param EntityContract $entity
+     * @param \Railken\LaraOre\LegalEntity\LegalEntity $entity
      *
      * @return \Railken\Laravel\Manager\Contracts\ManagerContract
      */
