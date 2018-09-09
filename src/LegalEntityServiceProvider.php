@@ -20,7 +20,7 @@ class LegalEntityServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutes();
 
-        config(['ore.permission.managers' => array_merge(Config::get('ore.permission.managers', []), [
+        config(['ore.managers' => array_merge(Config::get('ore.managers', []), [
             \Railken\LaraOre\LegalEntity\LegalEntityManager::class,
             \Railken\LaraOre\LegalEntityContact\LegalEntityContactManager::class,
         ])]);
