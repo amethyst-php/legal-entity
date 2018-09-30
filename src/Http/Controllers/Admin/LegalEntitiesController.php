@@ -1,52 +1,23 @@
 <?php
 
-namespace Railken\LaraOre\Http\Controllers\Admin;
+namespace Railken\Amethyst\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\Config;
-use Railken\LaraOre\Api\Http\Controllers\RestConfigurableController;
-use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\Amethyst\Api\Http\Controllers\RestManagerController;
+use Railken\Amethyst\Api\Http\Controllers\Traits as RestTraits;
+use Railken\Amethyst\Managers\LegalEntityManager;
 
-class LegalEntitiesController extends RestConfigurableController
+class LegalEntitiesController extends RestManagerController
 {
     use RestTraits\RestIndexTrait;
+    use RestTraits\RestShowTrait;
     use RestTraits\RestCreateTrait;
     use RestTraits\RestUpdateTrait;
-    use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
     /**
-     * The config path.
+     * The class of the manager.
      *
      * @var string
      */
-    public $config = 'ore.legal-entity';
-
-    /**
-     * The attributes that are queryable.
-     *
-     * @var array
-     */
-    public $queryable = [
-        'id',
-        'name',
-        'country_iso',
-        'notes',
-        'registered_office_address',
-        'registered_office_address_id',
-        'created_at',
-        'updated_at',
-    ];
-
-    /**
-     * The attributes that are fillable.
-     *
-     * @var array
-     */
-    public $fillable = [
-        'name',
-        'country_iso',
-        'notes',
-        'registered_office_address',
-        'registered_office_address_id',
-    ];
+    public $class = LegalEntityManager::class;
 }

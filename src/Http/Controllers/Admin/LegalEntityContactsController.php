@@ -1,55 +1,23 @@
 <?php
 
-namespace Railken\LaraOre\Http\Controllers\Admin;
+namespace Railken\Amethyst\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\RestConfigurableController;
-use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\Amethyst\Api\Http\Controllers\RestManagerController;
+use Railken\Amethyst\Api\Http\Controllers\Traits as RestTraits;
+use Railken\Amethyst\Managers\LegalEntityContactManager;
 
-class LegalEntityContactsController extends RestConfigurableController
+class LegalEntityContactsController extends RestManagerController
 {
     use RestTraits\RestIndexTrait;
+    use RestTraits\RestShowTrait;
     use RestTraits\RestCreateTrait;
     use RestTraits\RestUpdateTrait;
-    use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
     /**
-     * The config path.
+     * The class of the manager.
      *
      * @var string
      */
-    public $config = 'ore.legal-entity-contact';
-
-    /**
-     * The attributes that are queryable.
-     *
-     * @var array
-     */
-    public $queryable = [
-        'id',
-        'value',
-        'notes',
-        'legal_entity',
-        'legal_entity_id',
-        'taxonomy',
-        'taxonomy_id',
-        'taxonomy_name',
-        'created_at',
-        'updated_at',
-    ];
-
-    /**
-     * The attributes that are fillable.
-     *
-     * @var array
-     */
-    public $fillable = [
-        'value',
-        'notes',
-        'legal_entity',
-        'legal_entity_id',
-        'taxonomy',
-        'taxonomy_id',
-        'taxonomy_name',
-    ];
+    public $class = LegalEntityContactManager::class;
 }

@@ -1,18 +1,12 @@
 {
-    "name": "railken/lara-ore-legal-entity",
-    "keywords": ["laravel", "lara-ore"],
+    "name": "railken/amethyst-legal-entity",
+    "keywords": ["laravel", "amethyst", "amethyst-legal-entity", "legal-entity"],
     "license": "MIT",
     "require": {
         "php": ">=7.1",
-        "railken/bag": "^1.2",
-        "railken/laravel-manager": "^3.0.3",
-        "railken/lara-ore-api": "dev-master",
-        "railken/lara-ore-support": "dev-master",
-        "railken/lara-ore-taxonomy": "dev-master",
-        "railken/lara-ore-address": "dev-master",
-        "league/iso3166": "^2.1",
-        "dannyvankooten/vat.php": "^1.1",
-        "fzaninotto/faker": "^1.7"
+        "railken/amethyst-common": "0.1.*",
+        "railken/amethyst-taxonomy": "0.1.*",
+        "railken/amethyst-address": "0.1.*"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.10",
@@ -22,16 +16,18 @@
     },
     "autoload": {
         "psr-4" : {
-            "Railken\\LaraOre\\" : "src/"
+            "Railken\\Amethyst\\" : "src/"
         }
     },
     "autoload-dev": {
-        "psr-4": { "Railken\\LaraOre\\Tests\\": "tests/" }
+        "psr-4": { 
+            "Railken\\Amethyst\\Tests\\": "tests/" 
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Railken\\LaraOre\\LegalEntityServiceProvider"
+                "Railken\\Amethyst\\Providers\\FooServiceProvider"
             ]
         }
     }
