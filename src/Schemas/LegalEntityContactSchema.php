@@ -2,8 +2,9 @@
 
 namespace Railken\Amethyst\Schemas;
 
+use Illuminate\Support\Facades\Config;
+use Railken\Amethyst\Attributes as AmethystAttributes;
 use Railken\Amethyst\Managers\LegalEntityManager;
-use Railken\Amethyst\Managers\TaxonomyManager;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
 
@@ -18,9 +19,8 @@ class LegalEntityContactSchema extends Schema
     {
         return [
             Attributes\IdAttribute::make(),
-            Attributes\BelongsToAttribute::make('taxonomy_id')
-                ->setRelationName('taxonomy')
-                ->setRelationManager(TaxonomyManager::class),
+            AmethystAttributes\TaxonomyAttribute::make('taxonomy_id', Config::get('amethyst.legal-entity.managers.legal-entity-contact.taxonomy'))
+                ->setRelationName('taxonomy'),
             Attributes\BelongsToAttribute::make('legal_entity_id')
                 ->setRelationName('legal_entity')
                 ->setRelationManager(LegalEntityManager::class),

@@ -21,7 +21,7 @@ class LegalEntityContactFaker extends Faker
         $bag->set('notes', $faker->text);
         $bag->set('legal_entity', LegalEntityFaker::make()->parameters()->toArray());
         $bag->set('taxonomy', TaxonomyFaker::make()->parameters()->toArray());
-        $bag->set('taxonomy.vocabulary.name', Config::get('amethyst.legal-entity.managers.legal-entity-contact.taxonomy'));
+        $bag->set('taxonomy.parent.name', Config::get('amethyst.legal-entity.managers.legal-entity-contact.taxonomy'));
 
         return $bag;
     }
