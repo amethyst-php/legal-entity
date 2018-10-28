@@ -19,7 +19,7 @@ class LegalEntityContactSchema extends Schema
     {
         return [
             Attributes\IdAttribute::make(),
-            AmethystAttributes\TaxonomyAttribute::make('taxonomy_id', Config::get('amethyst.legal-entity.managers.legal-entity-contact.taxonomy'))
+            AmethystAttributes\TaxonomyAttribute::make('taxonomy_id', Config::get('amethyst.legal-entity.data.legal-entity-contact.taxonomy'))
                 ->setRelationName('taxonomy'),
             Attributes\BelongsToAttribute::make('legal_entity_id')
                 ->setRelationName('legal_entity')
