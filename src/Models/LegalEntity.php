@@ -4,24 +4,22 @@ namespace Railken\Amethyst\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Schemas\LegalEntitySchema;
+use Railken\Amethyst\Common\ConfigurableModel;
 use Railken\Lem\Contracts\EntityContract;
 
 class LegalEntity extends Model implements EntityContract
 {
-    use SoftDeletes;
+    use SoftDeletes, ConfigurableModel;
 
     /**
-     * Creates a new instance of the model.
+     * Create a new Eloquent model instance.
      *
      * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {
+        $this->ini('amethyst.legal-entity.data.legal-entity');
         parent::__construct($attributes);
-        $this->table = Config::get('amethyst.legal-entity.managers.legal-entity.table');
-        $this->fillable = (new LegalEntitySchema())->getNameFillableAttributes();
     }
 
     /**

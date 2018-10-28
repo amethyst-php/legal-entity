@@ -25,9 +25,9 @@ class LegalEntityTest extends BaseTest
     protected $group = 'admin';
 
     /**
-     * Base path config.
+     * Route name.
      *
      * @var string
      */
-    protected $config = 'amethyst.legal-entity.http.admin.legal-entity';
+    protected $route = 'admin.legal-entity';
 }

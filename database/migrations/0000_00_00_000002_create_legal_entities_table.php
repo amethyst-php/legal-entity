@@ -12,26 +12,26 @@ class CreateLegalEntitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create(Config::get('amethyst.legal-entity.managers.legal-entity.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.legal-entity.data.legal-entity.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('country')->nullable();
             $table->integer('registered_office_address_id')->unsigned()->nullable();
-            $table->foreign('registered_office_address_id')->references('id')->on(Config::get('amethyst.address.managers.address.table'));
+            $table->foreign('registered_office_address_id')->references('id')->on(Config::get('amethyst.address.data.address.table'));
 
             $table->text('notes')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
 
-        Schema::create(Config::get('amethyst.legal-entity.managers.legal-entity-contact.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.legal-entity.data.legal-entity-contact.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('value');
             $table->text('notes')->nullable();
             $table->integer('taxonomy_id')->unsigned();
-            $table->foreign('taxonomy_id')->references('id')->on(Config::get('amethyst.taxonomy.managers.taxonomy.table'));
+            $table->foreign('taxonomy_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
             $table->integer('legal_entity_id')->unsigned();
-            $table->foreign('legal_entity_id')->references('id')->on(Config::get('amethyst.legal-entity.managers.legal-entity.table'));
+            $table->foreign('legal_entity_id')->references('id')->on(Config::get('amethyst.legal-entity.data.legal-entity.table'));
             $table->softDeletes();
             $table->timestamps();
         });
@@ -42,7 +42,7 @@ class CreateLegalEntitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Config::get('amethyst.legal-entity.managers.legal-entity.table'));
-        Schema::dropIfExists(Config::get('amethyst.legal-entity.managers.legal-entity-contact.table'));
+        Schema::dropIfExists(Config::get('amethyst.legal-entity.data.legal-entity.table'));
+        Schema::dropIfExists(Config::get('amethyst.legal-entity.data.legal-entity-contact.table'));
     }
 }
