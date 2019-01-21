@@ -48,19 +48,19 @@ return [
     'http' => [
         'admin' => [
             'legal-entity' => [
-                'enabled'     => true,
-                'controller'  => Railken\Amethyst\Http\Controllers\Admin\LegalEntitiesController::class,
-                'router'      => [
-                    'as'        => 'legal-entity.',
-                    'prefix'    => '/legal-entities',
+                'enabled'    => true,
+                'controller' => Railken\Amethyst\Http\Controllers\Admin\LegalEntitiesController::class,
+                'router'     => [
+                    'as'     => 'legal-entity.',
+                    'prefix' => '/legal-entities',
                 ],
             ],
             'legal-entity-contact' => [
-                'enabled'     => true,
-                'controller'  => Railken\Amethyst\Http\Controllers\Admin\LegalEntityContactsController::class,
-                'router'      => [
-                    'as'        => 'legal-entity-contact.',
-                    'prefix'    => '/legal-entity-contacts',
+                'enabled'    => true,
+                'controller' => Railken\Amethyst\Http\Controllers\Admin\LegalEntityContactsController::class,
+                'router'     => [
+                    'as'     => 'legal-entity-contact.',
+                    'prefix' => '/legal-entity-contacts',
                 ],
             ],
         ],
