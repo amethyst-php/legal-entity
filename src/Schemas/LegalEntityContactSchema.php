@@ -20,11 +20,14 @@ class LegalEntityContactSchema extends Schema
         return [
             Attributes\IdAttribute::make(),
             AmethystAttributes\TaxonomyAttribute::make('taxonomy_id', Config::get('amethyst.legal-entity.data.legal-entity-contact.taxonomy'))
-                ->setRelationName('taxonomy'),
+                ->setRelationName('taxonomy')
+                ->setRequired(true),
             Attributes\BelongsToAttribute::make('legal_entity_id')
                 ->setRelationName('legal_entity')
-                ->setRelationManager(LegalEntityManager::class),
-            Attributes\TextAttribute::make('value'),
+                ->setRelationManager(LegalEntityManager::class)
+                ->setRequired(true),
+            Attributes\TextAttribute::make('value')
+                ->setRequired(true),
             Attributes\LongTextAttribute::make('notes'),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
