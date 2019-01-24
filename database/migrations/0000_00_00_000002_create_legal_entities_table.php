@@ -15,6 +15,8 @@ class CreateLegalEntitiesTable extends Migration
         Schema::create(Config::get('amethyst.legal-entity.data.legal-entity.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
             $table->string('country')->nullable();
             $table->integer('registered_office_address_id')->unsigned()->nullable();
             $table->foreign('registered_office_address_id')->references('id')->on(Config::get('amethyst.address.data.address.table'));

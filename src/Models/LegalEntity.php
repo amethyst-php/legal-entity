@@ -25,6 +25,14 @@ class LegalEntity extends Model implements EntityContract
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function type()
+    {
+        return $this->belongsTo(Taxonomy::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function registered_office_address()
     {
         return $this->belongsTo(Address::class);

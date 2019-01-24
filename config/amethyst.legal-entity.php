@@ -21,6 +21,7 @@ return [
             'authorizer' => Railken\Amethyst\Authorizers\LegalEntityAuthorizer::class,
             'faker'      => Railken\Amethyst\Fakers\LegalEntityFaker::class,
             'manager'    => Railken\Amethyst\Managers\LegalEntityManager::class,
+            'taxonomy'   => 'LEGAL_ENTITY',
         ],
         'legal-entity-contact' => [
             'table'      => 'amethyst_legal_entity_contacts',

@@ -2,6 +2,7 @@
 
 namespace Railken\Amethyst\Schemas;
 
+use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Attributes as AmethystAttributes;
 use Railken\Amethyst\Managers\AddressManager;
 use Railken\Lem\Attributes;
@@ -22,6 +23,9 @@ class LegalEntitySchema extends Schema
                 ->setRequired(true)
                 ->setUnique(true),
             Attributes\LongTextAttribute::make('notes'),
+            AmethystAttributes\TaxonomyAttribute::make('type_id', Config::get('amethyst.legal-entity.data.legal-entity.taxonomy'))
+                ->setRelationName('type')
+                ->setRequired(true),
             AmethystAttributes\CountryAttribute::make('country'),
             Attributes\BelongsToAttribute::make('registered_office_address_id')
                 ->setRelationName('registered_office_address')
