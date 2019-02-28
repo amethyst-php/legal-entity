@@ -21,7 +21,6 @@ return [
             'authorizer' => Railken\Amethyst\Authorizers\LegalEntityAuthorizer::class,
             'faker'      => Railken\Amethyst\Fakers\LegalEntityFaker::class,
             'manager'    => Railken\Amethyst\Managers\LegalEntityManager::class,
-            'taxonomy'   => 'LEGAL_ENTITY',
         ],
         'legal-entity-contact' => [
             'table'      => 'amethyst_legal_entity_contacts',
@@ -34,8 +33,20 @@ return [
             'authorizer' => Railken\Amethyst\Authorizers\LegalEntityContactAuthorizer::class,
             'faker'      => Railken\Amethyst\Fakers\LegalEntityContactFaker::class,
             'manager'    => Railken\Amethyst\Managers\LegalEntityContactManager::class,
-            'taxonomy'   => 'LEGAL_ENTITY_CONTACT',
         ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Taxonomies
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure taxonomies
+    |
+    */
+    'taxonomies' => [
+        ['name' => 'LEGAL_ENTITY'],
+        ['name' => 'LEGAL_ENTITY_CONTACT'],
     ],
 
     /*

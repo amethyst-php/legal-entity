@@ -23,7 +23,7 @@ class LegalEntitySchema extends Schema
                 ->setRequired(true)
                 ->setUnique(true),
             Attributes\LongTextAttribute::make('notes'),
-            AmethystAttributes\TaxonomyAttribute::make('type_id', Config::get('amethyst.legal-entity.data.legal-entity.taxonomy'))
+            AmethystAttributes\TaxonomyAttribute::make('type_id', Config::get('amethyst.legal-entity.taxonomies.0.name'))
                 ->setRelationName('type')
                 ->setRequired(true),
             AmethystAttributes\CountryAttribute::make('country'),

@@ -17,7 +17,9 @@ class LegalEntityServiceProvider extends CommonServiceProvider
         $this->app->register(\Railken\Amethyst\Providers\AddressServiceProvider::class);
         $this->app->register(\Railken\Amethyst\Providers\TaxonomyServiceProvider::class);
 
-        Config::push('amethyst.taxonomy.data.taxonomy.seeds', ['name' => Config::get('amethyst.legal-entity.data.legal-entity.taxonomy')]);
-        Config::push('amethyst.taxonomy.data.taxonomy.seeds', ['name' => Config::get('amethyst.legal-entity.data.legal-entity-contact.taxonomy')]);
+        Config::set('amethyst.taxonomy.data.taxonomy.seeds', array_merge(
+            Config::get('amethyst.taxonomy.data.taxonomy.seeds'),
+            Config::get('amethyst.legal-entity.taxonomies')
+        ));
     }
 }

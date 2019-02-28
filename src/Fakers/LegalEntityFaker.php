@@ -24,7 +24,7 @@ class LegalEntityFaker extends Faker
         $bag->set('code_tin', '203458239B01');
         $bag->set('registered_office_address', AddressFaker::make()->parameters()->toArray());
         $bag->set('type', TaxonomyFaker::make()->parameters()->toArray());
-        $bag->set('type.parent.name', Config::get('amethyst.legal-entity.data.legal-entity.taxonomy'));
+        $bag->set('type.parent.name', Config::get('amethyst.legal-entity.taxonomies.0.name'));
 
         return $bag;
     }
