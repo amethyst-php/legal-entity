@@ -25,18 +25,6 @@ class CreateLegalEntitiesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
-        Schema::create(Config::get('amethyst.legal-entity.data.legal-entity-contact.table'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('value');
-            $table->text('notes')->nullable();
-            $table->integer('taxonomy_id')->unsigned();
-            $table->foreign('taxonomy_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
-            $table->integer('legal_entity_id')->unsigned();
-            $table->foreign('legal_entity_id')->references('id')->on(Config::get('amethyst.legal-entity.data.legal-entity.table'));
-            $table->softDeletes();
-            $table->timestamps();
-        });
     }
 
     /**
@@ -45,6 +33,5 @@ class CreateLegalEntitiesTable extends Migration
     public function down()
     {
         Schema::dropIfExists(Config::get('amethyst.legal-entity.data.legal-entity.table'));
-        Schema::dropIfExists(Config::get('amethyst.legal-entity.data.legal-entity-contact.table'));
     }
 }
