@@ -28,7 +28,7 @@ class LegalEntity extends Model implements EntityContract
      */
     public function type(): BelongsTo
     {
-        return $this->belongsTo(Taxonomy::class);
+        return $this->belongsTo(config('amethyst.taxonomy.data.taxonomy.model'));
     }
 
     /**
@@ -36,6 +36,6 @@ class LegalEntity extends Model implements EntityContract
      */
     public function registered_office_address(): BelongsTo
     {
-        return $this->belongsTo(Address::class);
+        return $this->belongsTo(config('amethyst.address.data.address.model'));
     }
 }
