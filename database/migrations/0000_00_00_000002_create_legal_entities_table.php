@@ -20,8 +20,6 @@ class CreateLegalEntitiesTable extends Migration
             $table->string('country')->nullable();
             $table->integer('registered_office_address_id')->unsigned()->nullable();
             $table->foreign('registered_office_address_id')->references('id')->on(Config::get('amethyst.address.data.address.table'));
-
-            $table->text('notes')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
