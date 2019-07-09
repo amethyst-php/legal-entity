@@ -13,14 +13,14 @@ return [
         'legal-entity' => [
             'table'      => 'amethyst_legal_entities',
             'comment'    => 'Legal Entity',
-            'model'      => Railken\Amethyst\Models\LegalEntity::class,
-            'schema'     => Railken\Amethyst\Schemas\LegalEntitySchema::class,
-            'repository' => Railken\Amethyst\Repositories\LegalEntityRepository::class,
-            'serializer' => Railken\Amethyst\Serializers\LegalEntitySerializer::class,
-            'validator'  => Railken\Amethyst\Validators\LegalEntityValidator::class,
-            'authorizer' => Railken\Amethyst\Authorizers\LegalEntityAuthorizer::class,
-            'faker'      => Railken\Amethyst\Fakers\LegalEntityFaker::class,
-            'manager'    => Railken\Amethyst\Managers\LegalEntityManager::class,
+            'model'      => Amethyst\Models\LegalEntity::class,
+            'schema'     => Amethyst\Schemas\LegalEntitySchema::class,
+            'repository' => Amethyst\Repositories\LegalEntityRepository::class,
+            'serializer' => Amethyst\Serializers\LegalEntitySerializer::class,
+            'validator'  => Amethyst\Validators\LegalEntityValidator::class,
+            'authorizer' => Amethyst\Authorizers\LegalEntityAuthorizer::class,
+            'faker'      => Amethyst\Fakers\LegalEntityFaker::class,
+            'manager'    => Amethyst\Managers\LegalEntityManager::class,
         ],
     ],
 
@@ -48,7 +48,7 @@ return [
         'admin' => [
             'legal-entity' => [
                 'enabled'    => true,
-                'controller' => Railken\Amethyst\Http\Controllers\Admin\LegalEntitiesController::class,
+                'controller' => Amethyst\Http\Controllers\Admin\LegalEntitiesController::class,
                 'router'     => [
                     'as'     => 'legal-entity.',
                     'prefix' => '/legal-entities',

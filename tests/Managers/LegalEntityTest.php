@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Tests\Managers;
+namespace Amethyst\Tests\Managers;
 
-use Railken\Amethyst\Fakers\LegalEntityFaker;
-use Railken\Amethyst\Managers\LegalEntityManager;
-use Railken\Amethyst\Tests\BaseTest;
+use Amethyst\Fakers\LegalEntityFaker;
+use Amethyst\Managers\LegalEntityManager;
+use Amethyst\Tests\BaseTest;
 use Railken\Lem\Support\Testing\TestableBaseTrait;
 
 class LegalEntityTest extends BaseTest

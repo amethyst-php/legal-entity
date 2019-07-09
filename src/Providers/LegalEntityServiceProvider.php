@@ -1,9 +1,9 @@
 <?php
 
-namespace Railken\Amethyst\Providers;
+namespace Amethyst\Providers;
 
 use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Common\CommonServiceProvider;
+use Amethyst\Common\CommonServiceProvider;
 
 class LegalEntityServiceProvider extends CommonServiceProvider
 {
@@ -14,8 +14,8 @@ class LegalEntityServiceProvider extends CommonServiceProvider
     {
         parent::register();
 
-        $this->app->register(\Railken\Amethyst\Providers\AddressServiceProvider::class);
-        $this->app->register(\Railken\Amethyst\Providers\TaxonomyServiceProvider::class);
+        $this->app->register(\Amethyst\Providers\AddressServiceProvider::class);
+        $this->app->register(\Amethyst\Providers\TaxonomyServiceProvider::class);
 
         Config::set('amethyst.taxonomy.data.taxonomy.seeds', array_merge(
             Config::get('amethyst.taxonomy.data.taxonomy.seeds'),
