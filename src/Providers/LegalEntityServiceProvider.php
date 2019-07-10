@@ -2,8 +2,8 @@
 
 namespace Amethyst\Providers;
 
-use Illuminate\Support\Facades\Config;
 use Amethyst\Common\CommonServiceProvider;
+use Illuminate\Support\Facades\Config;
 
 class LegalEntityServiceProvider extends CommonServiceProvider
 {
