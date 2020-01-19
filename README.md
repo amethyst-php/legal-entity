@@ -1,6 +1,6 @@
 # amethyst-legal-entity
 
-[![Build Status](https://travis-ci.org/amethyst-php/legal-entity.svg?branch=master)](https://travis-ci.org/amethyst-php/legal-entity)
+[![Action Status](https://github.com/amethyst-php/legal-entity/workflows/test/badge.svg)](https://github.com/amethyst-php/legal-entity/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package.
 
