@@ -35,25 +35,4 @@ return [
     'taxonomies' => [
         ['name' => 'LEGAL_ENTITY'],
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Http configuration
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the routes
-    |
-    */
-    'http' => [
-        'admin' => [
-            'legal-entity' => [
-                'enabled'    => true,
-                'controller' => Amethyst\Http\Controllers\Admin\LegalEntitiesController::class,
-                'router'     => [
-                    'as'     => 'legal-entity.',
-                    'prefix' => '/legal-entities',
-                ],
-            ],
-        ],
-    ],
 ];
